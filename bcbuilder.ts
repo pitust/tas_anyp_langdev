@@ -17,9 +17,15 @@ abstract class Opcode {
     abstract string(): string
 }
 
-// class Meme extends Opcode {
+class StoreOpcode extends Opcode {
+    interpret(ctx: Context): void {
+        throw new Error("Method not implemented.");
+    }
+    string(): string {
+        throw new Error("Method not implemented.");
+    }
 
-// }
+}
 
 const out: Opcode[] = []
 
@@ -32,7 +38,7 @@ function writeOp(o: Node, tgd: symbol = null) {
     if (o.name == 'Let') {
         let s = Symbol('init$' + o.params.name)
         writeOp(o.children.init, s)
-        out.push(new StoreO)
+        out.push(new StoreOpcode())
     }
 
     abort('Unknown op ' + o.name)
