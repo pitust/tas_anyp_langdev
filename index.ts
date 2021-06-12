@@ -172,10 +172,14 @@ function symbolatom() {
 function identatom() {
     return Node('IdentAtom', {}, { sym: gettoken(TokenType.Ident) })
 }
+// stringatom = __str;
+function stringatom() {
+    return Node('StringAtom', {}, { sym: gettoken(TokenType.Ident) })
+}
 
 // atom = stratom | symbolatom | identatom | ifatom | blockatom | matchatom;
 function atom() {
-    if (istoken(TokenType.String)) return string
+    if (istoken(TokenType.String)) return stringatom()
 }
 
 // (* prec climber *)
