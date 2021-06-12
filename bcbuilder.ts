@@ -17,7 +17,7 @@ class StringVMValue extends VMValue {
         throw new Error('Method not implemented.')
     }
     eq(other: VMValue): boolean {
-        throw new Error('Method not implemented.')
+        if (other instanceof StringVMValue) return other.
     }
 
 }
