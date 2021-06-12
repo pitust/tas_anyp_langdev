@@ -195,11 +195,12 @@ function atom() {
 // expr = prec_climb[* / - +] atom;
 expr = (() => {
     let result = () => atom()
-    function precclimber(n: Node) {
+    function precclimber(nodekind: string, token) {
         const ogr = result
-        result = () => {
+        const selfr = () => {
 
         }
+        result = selfr
     }
 })()
 
