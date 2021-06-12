@@ -221,8 +221,7 @@ function letstmt() {
     const name = gettoken(TokenType.Ident)
     gettoken(TokenType.Punct, '=')
     const init = expr()
-    return Node('Let', { init })
+    return Node('Let', { init }, { name })
 }
-// exprstmt = expr;
-// stmt = ";" | letstmt | exprstmt;
+// stmt = ";" | letstmt | expr;
 // program = [^eof](stmt program);
