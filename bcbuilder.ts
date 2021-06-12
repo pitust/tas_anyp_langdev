@@ -19,15 +19,17 @@ abstract class Opcode {
 
 class StoreOpcode extends Opcode {
     to: symbol
+    str: string
     constructor(public reg: symbol, to: string) {
         super()
         this.to = Symbol.for(to)
+        this.str = `${r}`
     }
     interpret(ctx: Context): void {
         ctx.locals.set(this.to, ctx.regs.get(this.reg))
     }
     string(): string {
-        throw new Error('Method not implemented.')
+        return
     }
 }
 
