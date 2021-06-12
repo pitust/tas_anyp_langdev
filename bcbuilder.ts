@@ -1,6 +1,10 @@
 import { abort, ast, Node } from "./index";
 
-interface Context {}
+type V
+
+interface Context {
+    regs: Map<symbol, VMValue>
+}
 
 abstract class Opcode {
     abstract interpret(ctx: Context): void
