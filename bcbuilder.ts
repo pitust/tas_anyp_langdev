@@ -139,7 +139,7 @@ class LoadOpcode extends Opcode {
     constructor(public reg: symbol, to: string) {
         super()
         this.to = Symbol.for(to)
-        this.str = `ldr ${to}, ${id(reg)}`
+        this.str = `ldr ${id(reg)}, ${to}`
     }
     interpret(ctx: Context): void {
         ctx.locals.set(this.to, ctx.regs.get(this.reg))
