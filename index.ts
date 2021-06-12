@@ -28,10 +28,11 @@ function lex(s: string): [TokenType, string][] {
             continue
         }
         if (symbols.includes(s[0])) {
-            o.push([TokenType.Number, mr[0]])
-            s = s.slice(mr[0].length)
+            o.push([TokenType.Symbol, s[0]])
+            s = s.slice(1)
             continue
         }
+        for (let kw of keywords) 
     }
 
     return o
