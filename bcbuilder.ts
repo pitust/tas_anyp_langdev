@@ -17,7 +17,8 @@ abstract class Opcode {
     abstract string(): string
 }
 
-const idpool = new Set()
+const idpool = new Map< symbol, number>()
+const idsrc = (()
 function id(s: symbol): string {
 
 }
