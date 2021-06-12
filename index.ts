@@ -166,11 +166,15 @@ function matchatom() {
 }
 // symbolatom = ":" ident;
 function symbolatom() {
-    return Node('SymbolAtom', {}, { sym: gettoken(TokenType.S) })
+    return Node('SymbolAtom', {}, { sym: gettoken(TokenType.Symbol) })
 }
 // identatom = ident;
+function identatom() {
+    return Node('IdentAtom', {}, { sym: gettoken(TokenType.Ident) })
+}
 
 // atom = stratom | symbolatom | identatom | ifatom | blockatom | matchatom;
+function 
 
 // (* prec climber *)
 // expr = prec_climb[* / - +] atom;
