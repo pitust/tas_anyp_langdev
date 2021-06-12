@@ -178,7 +178,7 @@ function identatom(): Node {
 }
 // stringatom = __str;
 function stringatom(): Node {
-    return Node('StringAtom', {}, { sym: gettoken(TokenType.Ident) })
+    return Node('StringAtom', {}, { sym: gettoken(TokenType.String) })
 }
 
 // atom = stratom | symbolatom | identatom | ifatom | blockatom | matchatom;
