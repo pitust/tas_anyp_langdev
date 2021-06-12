@@ -121,6 +121,7 @@ function blockatom() {
     while (!istoken(TokenType.Punct, '}')) {
         stmt = Node('BlockElem', { prev: stmt, handler: stmt() }, {})
     }
+    gettoken(TokenType.Punct, '{')
 }
 // ifatom = kw:"if" expr blockatom ["else"]("else" blockatom);
 
