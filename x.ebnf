@@ -15,8 +15,8 @@ stratom = __;
 blockatom = "{" ([^"}"]stmt)* "}";
 ifatom = kw:"if" expr blockatom ["else"]("else" blockatom);
 matchatom
-symbolatom
-identatom
+symbolatom = ":" ident;
+identatom = ident;
 
 atom = stratom | symbolatom | identatom | ifatom | blockatom | matchatom;
 
