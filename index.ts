@@ -44,7 +44,14 @@ function lex(s: string): [TokenType, string][] {
         if (s[0] == "'") {
             // haha we got no time for a real string parser. this will do:
             let g = "'"
-            while (ca)
+            while (1) {
+                try {
+
+                } catch {
+                    g += s[0]
+                    s = s
+                }
+            }
         }
         console.log('[+] Error lexing, context: ' + s.split('\n', 1)[0].slice(0, 10))
         console.log('                           ^')
