@@ -134,10 +134,13 @@ function ifatom() {
         gettoken(TokenType.Keyword, 'else')
         alt = blockatom()
     }
-    return Node('If', { test, conseq, alt})
+    return Node('If', { test, conseq, alt }, {})
 }
 
 // pattern = symbolatom | ident;
+function pattern() {
+    if (istoken)
+}
 // match_body = [","](",") pattern "=>" expr;
 
 // matchatom = kw:"match" "{" match_body "}";
