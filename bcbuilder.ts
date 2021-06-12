@@ -3,7 +3,7 @@ import { SmartBuffer } from 'smart-buffer'
 
 function getsymbol(ctx: Context, sym: string): symbol {
     if (ctx.symbolmap.has(sym)) return ctx.symbolmap.get(sym)
-    return ctx.symbolmap.set(sym, Symbol.for(sym)).get(sym)
+    return ctx.symbolmap.set(sym, Symbol(sym)).get(sym)
 }
 
 abstract class VMValue {
