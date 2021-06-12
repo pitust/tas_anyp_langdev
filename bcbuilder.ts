@@ -36,7 +36,6 @@ class AxeTempOpcode extends Opcode {
         this.str = `axe ${id(reg)}`
     }
 }
-
 class StoreOpcode extends Opcode {
     to: symbol
     str: string
