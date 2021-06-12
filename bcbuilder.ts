@@ -1,4 +1,4 @@
-import { abort, ast, Node } from "./index";
+import { abort, ast, Node } from './index'
 
 abstract class VMValue {
     abstract string(): string
@@ -19,14 +19,16 @@ abstract class Opcode {
 
 class StoreOpcode extends Opcode {
     to: symbol
-    constructor(public reg: symbol, to: string) { super(); this.to = Symbol }
+    constructor(public reg: symbol, to: string) {
+        super()
+        this.to = Symbol.for(to)
+    }
     interpret(ctx: Context): void {
-        ctx.locals.set(thir.to)
+        ctx.locals.set(this.to, ctx.regs.get(this.reg))
     }
     string(): string {
-        throw new Error("Method not implemented.");
+        throw new Error('Method not implemented.')
     }
-
 }
 
 const out: Opcode[] = []
