@@ -200,12 +200,15 @@ expr = (() => {
         const selfr = () => {
             const r = ogr()
             if (istoken(TokenType.Symbol, sym)) {
+                gettoken(TokenType.Symbol, sym)
                 const nr = selfr()
                 return Node(nodekind, { lhs: r, rhs: nr }, {})
             }
+            return r
         }
         result = selfr
     }
+    precc
 })()
 
 // letstmt = kw:"let" ident:* "=" expr;
