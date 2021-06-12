@@ -1,5 +1,7 @@
 import { ast } from "./index";
 
+interface Context {}
+
 abstract class Opcode {
-    interpre
+    interpret(ctx: Context): void
 }
