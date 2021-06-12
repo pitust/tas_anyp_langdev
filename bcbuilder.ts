@@ -34,7 +34,7 @@ class SymbolVMValue extends VMValue {
         return ':' + this.ctx.symbolrevmap.get(this.symbol)
     }
     clone(): VMValue {
-        return new SymbolVMValue(this)
+        return new SymbolVMValue(this.ctx, )
     }
     toBytes(): Buffer {
         return new SmartBuffer().writeStringNT(this.name).toBuffer()
