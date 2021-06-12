@@ -18,7 +18,7 @@ function lex(s: string): [TokenType, string][] {
     const keywords = ['if', 'match', 'let']
 
     while (s.length) {
-        if ((mr = s.match(/^[0-9]+/))) {
+        if ((mr = s.match(/^[0-9]+[^a-z_]/))) {
             o.push([TokenType.Number, mr[0]])
             s = s.slice(mr[0].length)
             continue
@@ -37,7 +37,6 @@ function lex(s: string): [TokenType, string][] {
             s = s.slice(mr[0].length)
             continue
         }
-        if (mr)
         console.log('[+] Error lexing, context: ' + s.split('\n', 1)[0].slice(0, 10))
         console.log('                            ^')
     }
