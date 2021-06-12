@@ -9,8 +9,10 @@ inspect(match a {
 *)
 sc = ";";
 
-(* compiler  *)
+(* compiler magic *)
 stratom = __;
+
+ifatom = "";
 
 atom = stratom | ifatom | blockatom | matchatom;
 
