@@ -109,7 +109,12 @@ function writeOp(o: Node, tgd: symbol = null) {
         return
     }
     if (o.name == 'StringAtom') {
-        out.push(new CreateStringOpcode(tgd, ))
+        out.push(new CreateStringOpcode(tgd, o.params.sym))
+        return
+    }
+    if (o.name == 'StringAtom') {
+        out.push(new CreateStringOpcode(tgd, o.params.sym))
+        return
     }
 
     abort('Unknown op ' + o.name)
