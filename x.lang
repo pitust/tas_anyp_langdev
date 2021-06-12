@@ -1,5 +1,5 @@
 let world = 'world'
-let a = :ok
+let a = :ok;
 print("Hello, {world}")
 print(match a {
     :ok => 3
