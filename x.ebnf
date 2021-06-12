@@ -8,7 +8,7 @@ inspect(match a {
 })
 *)
 sc = ";";
-letstmt = kw:"let" ident:* "=" expr [";"]";";
-exprstmt = expr [";"]";";
+letstmt = kw:"let" ident:* "=" expr;
+exprstmt = expr;
 stmt = sc | letstmt | exprstmt;
 program = [^eof](stmt program);
