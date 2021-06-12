@@ -182,7 +182,8 @@ function atom() {
     if (istoken(TokenType.String)) return stringatom()
     if (istoken(TokenType.Symbol)) return symbolatom()
     if (istoken(TokenType.Ident)) return identatom()
-    if (istoken(TokenType.Ident)) return identatom()
+    if (istoken(TokenType.Punct, '{')) return blockatom()
+    if (istoken(TokenType.Keyword, 'match')) return matchato()
 }
 
 // (* prec climber *)
