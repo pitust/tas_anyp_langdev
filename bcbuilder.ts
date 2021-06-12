@@ -4,5 +4,9 @@ interface Context {}
 
 abstract class Opcode {
     abstract interpret(ctx: Context): void
-    abstract str
+    abstract string(): string
+}
+
+class Meme extends Opcode {
+    
 }
