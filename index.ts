@@ -202,8 +202,9 @@ expr = (() => {
             let args: Node[] = []
             while (!istoken(TokenType.Punct, ')')) {
                 args.push(expr())
-                
+                if ()
             }
+            gettoken(TokenType.Punct, ')')
         }
         return a
     }
