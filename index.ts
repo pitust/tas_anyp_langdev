@@ -32,7 +32,11 @@ function lex(s: string): [TokenType, string][] {
             s = s.slice(1)
             continue
         }
-        for (let kw of keywords) 
+        if (mr = s.match(/^[a-zA-]+/)) {
+            o.push([TokenType.Number, mr[0]])
+            s = s.slice(mr[0].length)
+            continue
+        }
     }
 
     return o
