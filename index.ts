@@ -1,4 +1,5 @@
 import { readFileSync } from 'fs'
+import { inspect } from 'util'
 function abort(s: string) {
     console.trace('backtrace')
     console.log(s)
@@ -262,5 +263,7 @@ function program(): Node {
     }
     return Node('Noop', {}, {})
 }
+
+inspect.defaultOptions.depth = Infinity
 
 console.log(program())
