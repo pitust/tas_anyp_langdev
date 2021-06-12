@@ -236,5 +236,8 @@ function stmt() {
 }
 // program = [^eof](stmt program);
 function program() {
-    if (s.l)
+    if (s.length) {
+        
+    }
+    return Node('Noop')
 }
