@@ -9,7 +9,7 @@ inspect(match a {
 *)
 sc = ";";
 
-expr = ;
+expr = precM;
 
 letstmt = kw:"let" ident:* "=" expr;
 exprstmt = expr;
