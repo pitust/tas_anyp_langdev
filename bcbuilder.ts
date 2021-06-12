@@ -18,7 +18,8 @@ abstract class Opcode {
 }
 
 class StoreOpcode extends Opcode {
-    constructor(public reg: symbol, to: string) { super() }
+    to: symbol
+    constructor(public reg: symbol, to: string) { super(); this.to = Symbol }
     interpret(ctx: Context): void {
         ctx.locals.set(thir.to)
     }
