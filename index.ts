@@ -117,13 +117,15 @@ function istoken(tok: TokenType, s: string | null = null): boolean {
 // blockatom = "{" ([^"}"]stmt)* "}";
 function blockatom() {
     gettoken(TokenType.Punct, '{')
-    let stmt = Node('BlockTrailer', {}, {})
+    let res = Node('BlockTrailer', {}, {})
     while (!istoken(TokenType.Punct, '}')) {
-        stmt = Node('BlockElem', { prev: stmt, handler: stmt() }, {})
+        res = Node('BlockElem', { prev: res, handler: stmt() }, {})
     }
-    gettoken(TokenType.Punct, '{')
+    gettoken(TokenType.Punct, '}')
+    return res
 }
 // ifatom = kw:"if" expr blockatom ["else"]("else" blockatom);
+f
 
 // pattern = symbolatom | ident;
 // match_body = [","](",") pattern "=>" expr;
