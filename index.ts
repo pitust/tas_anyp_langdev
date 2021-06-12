@@ -91,8 +91,8 @@ console.log(lex(s))
 
 interface Node {
     name: string
-    children: Node[]
-    par
+    children: Record<string, Node>
+    params: Record<string, >
 }
 
 
