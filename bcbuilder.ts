@@ -142,7 +142,7 @@ class LoadOpcode extends Opcode {
         this.str = `ldr ${id(reg)}, ${from}`
     }
     interpret(ctx: Context): void {
-        ctx.regs.set(this.reg, ctx.locals.get(this.))
+        ctx.regs.set(this.reg, ctx.locals.get(this.from))
     }
     string(): string {
         return this.str
