@@ -235,7 +235,7 @@ function stmt() {
     return expr()
 }
 // program = [^eof](stmt program);
-function program() {
+function program(): Node {
     if (s.length) {
         return Node('RootStmt', { stmt: stmt(), next: program() }, {})
     }
