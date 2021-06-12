@@ -26,7 +26,8 @@ class StringVMValue extends VMValue {
     }
 }
 class SymbolVMValue extends VMValue {
-    constructor(public ctx: Context, public name: string) {
+
+    constructor(public ctx: Context, name: string) {
         super()
     }
     string(): string {
@@ -47,6 +48,7 @@ class SymbolVMValue extends VMValue {
 interface Context {
     regs: Map<symbol, VMValue>
     locals: Map<symbol, VMValue>
+    symbolmap: Map<string, symbol>
 }
 
 abstract class Opcode {
