@@ -181,16 +181,20 @@ function identatom(): Node {
 function stringatom(): Node {
     return Node('StringAtom', {}, { sym: gettoken(TokenType.String) })
 }
+// numberatom = __mu;
+function numberatom(): Node {
+    return Node('StringAtom', {}, { sym: gettoken(TokenType.String) })
+}
 
 // atom = stratom | symbolatom | identatom | ifatom | blockatom | matchatom;
 function atom(): Node {
     if (istoken(TokenType.String)) return stringatom()
     if (istoken(TokenType.Symbol)) return symbolatom()
     if (istoken(TokenType.Ident)) return identatom()
+    if (istoken(TokenType.Number)) return numberatom()
     if (istoken(TokenType.Punct, '{')) return blockatom()
     if (istoken(TokenType.Keyword, 'match')) return matchatom()
     if (istoken(TokenType.Keyword, 'if')) return ifatom()
-    if (istoken(TokenType.Number, 'if')) return ifatom()
     gettoken(TokenType.Lolnope, 'lol nope')
 }
 
