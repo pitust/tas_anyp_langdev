@@ -1,7 +1,7 @@
 let world = 'world'
 let a = :ok;
 print("Hello, {world}")
-print(match a {
+inspect(match a {
     :ok => 3
     :notok => 4
 })
