@@ -1,7 +1,7 @@
-world = 'world'
+let world = 'world'
+let a = :ok
 print("Hello, {world}")
-a = :ok
 print(match a {
     :ok => 3
     :notok => 4
-}
+})
