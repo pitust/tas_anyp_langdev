@@ -163,6 +163,7 @@ function match_body(): Node {
 // matchatom = kw:"match" "{" match_body "}";
 function matchatom(): Node {
     gettoken(TokenType.Keyword, 'match')
+    const matchover  =
     gettoken(TokenType.Punct, '{')
     const result = match_body()
     gettoken(TokenType.Punct, '{')
