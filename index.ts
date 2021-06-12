@@ -1,6 +1,6 @@
 import { readFileSync } from 'fs'
 
-
+readFileSync('x.lang').toJSO
 
 
 // sc = ";";
