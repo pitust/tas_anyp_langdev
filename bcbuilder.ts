@@ -28,7 +28,7 @@ class AxeTempOpcode extends Opcode {
         ctx.locals.delete(this.reg)
     }
     string(): string {
-        throw new Error('Method not implemented.')
+        return this.str
     }
     str: string
     constructor(public reg: symbol) {
@@ -66,7 +66,9 @@ function writeOp(o: Node, tgd: symbol = null) {
         writeOp(o.children.init, s)
         out.push(new StoreOpcode(s, o.params.name))
         out.push(new AxeTempOpcode(s))
+        return
     }
+    if 
 
     abort('Unknown op ' + o.name)
 }
