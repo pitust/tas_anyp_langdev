@@ -27,7 +27,7 @@ function lex(s: string): [TokenType, string][] {
             s = s.slice(mr[0].length)
             continue
         }
-        if (s.startsWith) {
+        if (symbols.includes(s[0])) {
             o.push([TokenType.Number, mr[0]])
             s = s.slice(mr[0].length)
             continue
