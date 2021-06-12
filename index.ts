@@ -8,7 +8,9 @@ enum TokenType {
     Symbol
 }
 
-function l
+function lex(s: string): [TokenType, string][] {
+    let o: [TokenType, string][]
+}
 
 // sc = ";";
 
