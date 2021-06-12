@@ -229,8 +229,8 @@ function stmt() {
         gettoken(TokenType.Punct, ';')
         return Node('Noop', {}, {})
     }
-    if (gettoken(TokenType.Keyword, 'let')) {
-        
+    if (istoken(TokenType.Keyword, 'let')) {
+        return letstmt()
     }
 }
 // program = [^eof](stmt program);
