@@ -4,6 +4,7 @@ abstract class VMValue {
     abstract string(): string
     abstract clone(): VMValue
     abstract toBytes(): Buffer
+    abstract toBeqytes(): Buffer
 }
 
 interface Context {
