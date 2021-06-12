@@ -139,7 +139,7 @@ class LoadOpcode extends Opcode {
     constructor(public reg: symbol, to: string) {
         super()
         this.to = Symbol.for(to)
-        this.str = `str ${to}, ${id(reg)}`
+        this.str = `ldr ${to}, ${id(reg)}`
     }
     interpret(ctx: Context): void {
         ctx.locals.set(this.to, ctx.regs.get(this.reg))
@@ -173,7 +173,7 @@ function writeOp(o: Node, tgd: symbol = null) {
         return
     }
     if (o.name == 'IdentAtom') {
-        out.push(new GetLocalOpcode(tgd, o.params.sym))
+        out.push(new LoadOpcode(tgd, o.params.sym))
         return
     }
     if (o.name == 'Noop') {
