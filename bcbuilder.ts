@@ -89,12 +89,12 @@ class CreateStringOpcode extends Opcode {
     strrepr: string
     constructor(public reg: symbol, public str: string) {
         super()
-        this.strrepr = `lds ${id(reg)}, ${JSON.stringify(str)}`
+        this.strrepr = `ldstr ${id(reg)}, ${JSON.stringify(str)}`
     }
 }
 class CreateSymbolOpcode extends Opcode {
     interpret(ctx: Context): void {
-        ctx.regs.set(this.reg, new SymbolVMValue(this.str))
+        ctx.regs.set(this.reg, new SymbolVMValue(ctx, this.sym))
     }
     string(): string {
         return this.strrepr
@@ -102,7 +102,7 @@ class CreateSymbolOpcode extends Opcode {
     strrepr: string
     constructor(public reg: symbol, public sym: string) {
         super()
-        this.strrepr = `ldsym ${id(reg)}, ${JSON.stringify(str)}`
+        this.strrepr = `ldsym ${id(reg)}, ${sym}`
     }
 }
 class AxeTempOpcode extends Opcode {
