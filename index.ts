@@ -12,11 +12,13 @@ function lex(s: string): [TokenType, string][] {
     let o: [TokenType, string][] = []
 
     while (s.length) {
-        
+        if (s[0].)
     }
 
     return o
 }
+
+console.log(lex(s))
 
 // sc = ";";
 
