@@ -25,6 +25,24 @@ class StringVMValue extends VMValue {
         return false
     }
 }
+class SymbolVMValue extends VMValue {
+    constructor(public str: string) {
+        super()
+    }
+    string(): string {
+        throw new Error('Method not implemented.')
+    }
+    clone(): VMValue {
+        throw new Error('Method not implemented.')
+    }
+    toBytes(): Buffer {
+        return new SmartBuffer().writeStringNT(this.str).toBuffer()
+    }
+    eq(other: VMValue): boolean {
+        if (other instanceof StringVMValue) return other.str == this.str
+        return false
+    }
+}
 
 interface Context {
     regs: Map<symbol, VMValue>
@@ -112,8 +130,8 @@ function writeOp(o: Node, tgd: symbol = null) {
         out.push(new CreateStringOpcode(tgd, o.params.sym))
         return
     }
-    if (o.name == 'StringAtom') {
-        out.push(new CreateStringOpcode(tgd, o.params.sym))
+    if (o.name == 'SymbolAtom') {
+        out.push(new CreateSymbolOpcode(tgd, o.params.sym))
         return
     }
 
