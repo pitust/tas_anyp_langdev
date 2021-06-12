@@ -212,8 +212,8 @@ expr = (() => {
         const ogr = result
         const selfr = () => {
             const r = ogr()
-            if (istoken(TokenType.Symbol, sym)) {
-                gettoken(TokenType.Symbol, sym)
+            if (istoken(TokenType.Punct, sym)) {
+                gettoken(TokenType.Punct, sym)
                 const nr = selfr()
                 return Node(nodekind, { lhs: r, rhs: nr }, {})
             }
