@@ -107,7 +107,7 @@ function Node(name: string, children: Record<string, Node>, params: Record<strin
 
 function gettoken(tok: TokenType, s: string | null = null): string {
     if (ts[0][0] != tok) abort(`parse error: expected (${TokenType[tok]}, ${s}) got (${TokenType[ts[0][0]]}, ${ts[0][1]})`)
-    if (ts[0][1] != s && s !== null) abort('parse error')
+    if (ts[0][1] != s && s !== null) abort(`parse error: expected (${TokenType[tok]}, ${s}) got (${TokenType[ts[0][0]]}, ${ts[0][1]})`)
     return ts.shift()[1]
 }
 function istoken(tok: TokenType, s: string | null = null): boolean {
