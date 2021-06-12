@@ -220,7 +220,8 @@ function letstmt() {
     gettoken(TokenType.Keyword, 'let')
     const name = gettoken(TokenType.Ident)
     gettoken(TokenType.Punct, '=')
-    const e 
+    const init = expr()
+    return Node('Let', { init })
 }
 // exprstmt = expr;
 // stmt = ";" | letstmt | exprstmt;
