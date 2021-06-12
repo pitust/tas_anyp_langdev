@@ -11,8 +11,10 @@ enum TokenType {
 function lex(s: string): [TokenType, string][] {
     let o: [TokenType, string][] = []
 
+    let mr: RegExpMatchArray
+
     while (s.length) {
-        if (s[0].)
+        if (s.match(/^[0-9]+))
     }
 
     return o
