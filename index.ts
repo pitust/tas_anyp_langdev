@@ -128,8 +128,11 @@ function blockatom() {
 function ifatom() {
     gettoken(TokenType.Keyword, 'if')
     const test = expr()
-    const body = blockatom()
-    if (istoken(TokenType.Keyword))
+    const  = blockatom()
+    if (istoken(TokenType.Keyword, 'else')) {
+        gettoken(TokenType.Keyword, 'else')
+
+    }
 }
 
 // pattern = symbolatom | ident;
