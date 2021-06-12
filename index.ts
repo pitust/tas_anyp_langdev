@@ -166,7 +166,7 @@ function matchatom(): Node {
     const matchover = expr()
     gettoken(TokenType.Punct, '{')
     const result = match_body()
-    gettoken(TokenType.Punct, '{')
+    gettoken(TokenType.Punct, '}')
     return Node('Match', { body: result, over: matchover })
 }
 // symbolatom = ":" ident;
@@ -181,9 +181,9 @@ function identatom(): Node {
 function stringatom(): Node {
     return Node('StringAtom', {}, { sym: gettoken(TokenType.String) })
 }
-// numberatom = __mu;
+// numberatom = __num;
 function numberatom(): Node {
-    return Node('StringAtom', {}, { sym: gettoken(TokenType.String) })
+    return Node('NumberAtom', {}, { sym: gettoken(TokenType.Number) })
 }
 
 // atom = stratom | symbolatom | identatom | ifatom | blockatom | matchatom;
