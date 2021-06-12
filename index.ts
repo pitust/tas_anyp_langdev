@@ -224,4 +224,7 @@ function letstmt() {
     return Node('Let', { init }, { name })
 }
 // stmt = ";" | letstmt | expr;
+function stmt() {
+    if (istoken(TokenType.Punct, ';')) 
+}
 // program = [^eof](stmt program);
