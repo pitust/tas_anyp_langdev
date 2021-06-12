@@ -19,7 +19,7 @@ function writeOp(o: Node) {
         writeOp(o.children.next)
         return
     }
-    if (o.name == 'If') {
+    if (o.name == 'Let') {
         
     }
 
