@@ -95,7 +95,9 @@ interface Node {
     params: Record<string, string>
 }
 
-function Node(): Node
+function Node(name: string, children: Record<string, Node>, params: Record<string, string>): Node {
+    return { name, children, params }
+}
 
 
 // sc = ";";
