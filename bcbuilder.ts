@@ -31,10 +31,10 @@ class SymbolVMValue extends VMValue {
         super()
     }
     string(): string {
-        return this.ctx.symbolrevmap.get(this.symbol)
+        return ':' + this.ctx.symbolrevmap.get(this.symbol)
     }
     clone(): VMValue {
-        
+        return new SymbolVMValue(this)
     }
     toBytes(): Buffer {
         return new SmartBuffer().writeStringNT(this.name).toBuffer()
@@ -49,7 +49,7 @@ interface Context {
     regs: Map<symbol, VMValue>
     locals: Map<symbol, VMValue>
     symbolmap: Map<string, symbol>
-    symbolrevmap: Map<string, symbol>
+    symbolrevmap: Map<symbol, string>
 }
 
 abstract class Opcode {
