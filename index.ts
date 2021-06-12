@@ -195,8 +195,11 @@ function atom(): Node {
 // (* prec climber *)
 // expr = prec_climb[* / - +] atom;
 expr = (() => {
-    let result = () => atom()
-    
+    let result = () => {
+        const a = atom()
+        if ()
+        return a
+    }
     function precclimber(nodekind: string, sym: string) {
         const ogr = result
         const selfr = () => {
