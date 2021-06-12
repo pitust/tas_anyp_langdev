@@ -23,6 +23,14 @@ function id(s: symbol): string {
     return 'r' + idpool.set(s, idpool.get(s) ?? idsrc()).get(s).toString()
 }
 
+class AxeTempOpcode extends Opcode {
+    constructor(public reg: symbol, to: string) {
+        super()
+        this.to = Symbol.for(to)
+        this.str = `str ${to}, ${id(reg)}`
+    }
+}
+
 class StoreOpcode extends Opcode {
     to: symbol
     str: string
