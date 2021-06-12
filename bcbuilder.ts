@@ -134,12 +134,12 @@ class StoreOpcode extends Opcode {
     }
 }
 class LoadOpcode extends Opcode {
-    to: symbol
+    from: symbol
     str: string
-    constructor(public reg: symbol, to: string) {
+    constructor(public reg: symbol, from: string) {
         super()
-        this.to = Symbol.for(to)
-        this.str = `ldr ${id(reg)}, ${to}`
+        this.from = Symbol.for(from)
+        this.str = `ldr ${id(reg)}, ${from}`
     }
     interpret(ctx: Context): void {
         ctx.locals.set(this.to, ctx.regs.get(this.reg))
