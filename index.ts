@@ -5,7 +5,7 @@ const s = readFileSync('x.lang').toString()
 enum TokenType {
     Keyword,
     Ident,
-    Symbol,
+    Punct,
     Number,
     String,
 }
@@ -15,7 +15,7 @@ function lex(s: string): [TokenType, string][] {
 
     let mr: RegExpMatchArray
 
-    const symbols = ['=>'].concat('=:;,()+{}'.split(''))
+    const punct = ['=>'].concat('=:;,()+{}'.split(''))
     const keywords = ['if', 'match', 'let']
 
     while (s.length) {
@@ -24,10 +24,10 @@ function lex(s: string): [TokenType, string][] {
             s = s.slice(mr[0].length - 1)
             continue
         }
-        for (let sym of symbols) {
+        for (let sym of punct) {
             if (s.startsWith(sym)) {
                 s = s.slice(sym.length)
-                o.push([TokenType.Symbol, ])
+                o.push([TokenType.Punct, ])
             }
         }
         if ((mr = s.match(/^[a-zA-Z_][a-zA-Z_0-9]*/))) {
