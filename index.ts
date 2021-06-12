@@ -15,7 +15,7 @@ function lex(s: string): [TokenType, string][] {
 
     let mr: RegExpMatchArray
 
-    const symbols = '=:;,()'
+    const symbols = '=:;,()+'
     const keywords = ['if', 'match', 'let']
 
     while (s.length) {
@@ -45,6 +45,21 @@ function lex(s: string): [TokenType, string][] {
         if (s[0] == "'") {
             // haha we got no time for a real string parser. this will do:
             let g = "'"
+            s = s.slice(1)
+            while (1) {
+                try {
+                    o.push([TokenType.String, eval(g)])
+                    break
+                } catch {
+                    g += s[0]
+                    s = s.slice(1)
+                }
+            }
+            continue
+        }
+        if (s[0] == '"') {
+            // haha we got no time for a real string parser. this will do:
+            let g = '"'
             s = s.slice(1)
             while (1) {
                 try {
