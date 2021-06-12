@@ -218,7 +218,9 @@ expr = (() => {
 // letstmt = kw:"let" ident:* "=" expr;
 function letstmt() {
     gettoken(TokenType.Keyword, 'let')
-    const name = gettoken(To)
+    const name = gettoken(TokenType.Ident)
+    gettoken(TokenType.Punct, '=')
+    const e 
 }
 // exprstmt = expr;
 // stmt = ";" | letstmt | exprstmt;
