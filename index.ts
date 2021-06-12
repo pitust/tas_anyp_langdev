@@ -117,6 +117,7 @@ function istoken(tok: TokenType, s: string | null = null): boolean {
 // blockatom = "{" ([^"}"]stmt)* "}";
 function blockatom() {
     gettoken(TokenType.Punct, '{')
+    let stmt = Node('Bl')
 }
 // ifatom = kw:"if" expr blockatom ["else"]("else" blockatom);
 
