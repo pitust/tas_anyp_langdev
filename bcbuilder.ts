@@ -68,7 +68,9 @@ function writeOp(o: Node, tgd: symbol = null) {
         out.push(new AxeTempOpcode(s))
         return
     }
-    if 
+    if (o.name == 'StringAtom') {
+        
+    }
 
     abort('Unknown op ' + o.name)
 }
