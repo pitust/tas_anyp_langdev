@@ -1,5 +1,5 @@
 import { abort, ast, Node } from './index'
-
+import SmartBuffer 
 abstract class VMValue {
     abstract string(): string
     abstract clone(): VMValue
@@ -15,7 +15,7 @@ class StringVMValue extends VMValue {
         throw new Error('Method not implemented.')
     }
     toBytes(): Buffer {
-        
+        const b = new SmartBuffer()
     }
     eq(other: VMValue): boolean {
         if (other instanceof StringVMValue) return other.str == this.str
