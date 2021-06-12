@@ -1,12 +1,15 @@
 import { abort, ast, Node } from './index'
 import { SmartBuffer } from 'smart-buffer'
 
+function getsymbol(ctx: Context,.)
+
 abstract class VMValue {
     abstract string(): string
     abstract clone(): VMValue
     abstract toBytes(): Buffer
     abstract eq(other: VMValue): boolean
 }
+
 class StringVMValue extends VMValue {
     constructor(public str: string) {
         super()
@@ -29,7 +32,7 @@ class SymbolVMValue extends VMValue {
     symbol: symbol
     constructor(public ctx: Context, name: string | symbol) {
         super()
-        if (typeof name == 'string') name = allocsymbol(ctx, name)
+        if (typeof name == 'string') name = getsymbol(ctx, name)
     }
     string(): string {
         return ':' + this.ctx.symbolrevmap.get(this.symbol)
