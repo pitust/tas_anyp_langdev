@@ -1,6 +1,8 @@
 import { abort, ast, Node } from "./index";
 
-type V
+abstract class VMValue {
+    
+}
 
 interface Context {
     regs: Map<symbol, VMValue>
