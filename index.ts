@@ -264,6 +264,6 @@ function program(): Node {
     return Node('Noop', {}, {})
 }
 
-inspect.defaultOptions.depth = Infinity
+// inspect.defaultOptions.depth = Infinity
 
-export program())
+export const ast = program()
