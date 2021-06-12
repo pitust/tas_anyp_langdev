@@ -5,7 +5,8 @@ const s = readFileSync('x.lang').toString()
 enum TokenType {
     Keyword,
     Ident,
-    Symbol
+    Symbol,
+    Number
 }
 
 function lex(s: string): [TokenType, string][] {
@@ -14,7 +15,9 @@ function lex(s: string): [TokenType, string][] {
     let mr: RegExpMatchArray
 
     while (s.length) {
-        if (s.match(/^[0-9]+))
+        if (mr = s.match(/^[0-9]+/)) {
+            o.push
+        }
     }
 
     return o
