@@ -24,10 +24,12 @@ function lex(s: string): [TokenType, string][] {
             s = s.slice(mr[0].length - 1)
             continue
         }
+        let haswo
         for (let sym of punct) {
             if (s.startsWith(sym)) {
                 s = s.slice(sym.length)
-                o.push([TokenType.Punct, ])
+                o.push([TokenType.Punct, sym])
+                break
             }
         }
         if ((mr = s.match(/^[a-zA-Z_][a-zA-Z_0-9]*/))) {
