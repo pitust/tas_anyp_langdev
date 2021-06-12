@@ -1,5 +1,5 @@
 import { ast } from "./index";
 
-enum Bytecode {
+enum BytecodeOp {
 
 }
