@@ -178,7 +178,8 @@ function writeOp(o: Node, tgd: symbol = null) {
         return
     }
     if (o.name == 'CallExpr') {
-        Object.values(o.children.args.children)
+        const args = Object.values(o.children.args.children)
+        
     }
     if (o.name == 'Noop') {
         return
