@@ -12,8 +12,8 @@ sc = ";";
 (* compiler magic *)
 stratom = __;
 
+blockatom = "{" ([^"}"]stmt)* "}";
 ifatom = kw:"if" expr "{" ([^"}"]stmt)* "}" ["else"]("{" ([^"}"]stmt)* "}");
-blockatom = ;
 
 atom = stratom | ifatom | blockatom | matchatom;
 
