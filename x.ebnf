@@ -9,7 +9,8 @@ inspect(match a {
 *)
 sc = ";";
 
-stratom = (* com*);
+(* compiler  *)
+stratom = __;
 
 atom = stratom | ifatom | blockatom | matchatom;
 
