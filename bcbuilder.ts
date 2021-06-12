@@ -27,8 +27,9 @@ class StringVMValue extends VMValue {
 }
 class SymbolVMValue extends VMValue {
     symbol: symbol
-    constructor(public ctx: Context, name: string) {
+    constructor(public ctx: Context, name: string | symbol) {
         super()
+        if (typeof name == 'string') name = allocsymbol
     }
     string(): string {
         return ':' + this.ctx.symbolrevmap.get(this.symbol)
