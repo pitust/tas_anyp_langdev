@@ -15,11 +15,11 @@ class StringVMValue extends VMValue {
         throw new Error('Method not implemented.')
     }
     toBytes(): Buffer {
-        throw new Error('Method not implemented.')
+        
     }
     eq(other: VMValue): boolean {
         if (other instanceof StringVMValue) return other.str == this.str
-        
+        return false
     }
 
 }
