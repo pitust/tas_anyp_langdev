@@ -1,5 +1,6 @@
 import { readFileSync } from 'fs'
 function abort(s: string) {
+    console.trace('backtrace')
     console.log(s)
     process.exit(69)
 }
