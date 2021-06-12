@@ -193,7 +193,11 @@ function atom() {
 
 // (* prec climber *)
 // expr = prec_climb[* / - +] atom;
-expr 
+expr = (() => {
+    let result = () => {
+        retu
+    }
+})()
 
 // letstmt = kw:"let" ident:* "=" expr;
 // exprstmt = expr;
