@@ -214,7 +214,7 @@ expr = (() => {
                 if (!istoken(TokenType.Punct, ')')) gettoken(TokenType.Punct, ',')
             }
             gettoken(TokenType.Punct, ')')
-            return Node('CallExpr', { args: Node('Args', {  }, {}) }, {  })
+            return Node('CallExpr', { args: Node('Args', Object.fromEntries(args.map((e => )), {}) }, {  })
         }
         return a
     }
