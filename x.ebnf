@@ -12,7 +12,7 @@ sc = ";";
 (* compiler magic *)
 stratom = __;
 
-ifatom = "if" "{" ;
+ifatom = kw:"if" sym:"{" ;
 
 atom = stratom | ifatom | blockatom | matchatom;
 
