@@ -17,13 +17,18 @@ abstract class Opcode {
     abstract string(): string
 }
 
+const idpool = new Set()
+function id(s: symbol): string {
+
+}
+
 class StoreOpcode extends Opcode {
     to: symbol
     str: string
     constructor(public reg: symbol, to: string) {
         super()
         this.to = Symbol.for(to)
-        this.str = `${r}`
+        this.str = `${id(reg)}`
     }
     interpret(ctx: Context): void {
         ctx.locals.set(this.to, ctx.regs.get(this.reg))
