@@ -14,7 +14,7 @@ abstract class Opcode {
 const out: Opcode[] = []
 
 function writeOp(o: Node) {
-    
+    if (o)
 
     abort('Unknown op ' + o.name)
 }
