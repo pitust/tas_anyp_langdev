@@ -90,7 +90,9 @@ function lex(s: string): [TokenType, string][] {
 console.log(lex(s))
 
 interface Node {
-    
+    name: string
+    children: Node[]
+    par
 }
 
 
