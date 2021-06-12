@@ -117,7 +117,7 @@ function istoken(tok: TokenType, s: string | null = null): boolean {
 }
 
 // blockatom = "{" ([^"}"]stmt)* "}";
-function blockatom() {
+function blockatom(): Node {
     gettoken(TokenType.Punct, '{')
     let res = Node('BlockTrailer', {}, {})
     while (!istoken(TokenType.Punct, '}')) {
@@ -127,7 +127,7 @@ function blockatom() {
     return res
 }
 // ifatom = kw:"if" expr blockatom ["else"]("else" blockatom);
-function ifatom() {
+function ifatom(): Node {
     gettoken(TokenType.Keyword, 'if')
     const test = expr()
     const conseq = blockatom()
@@ -140,7 +140,7 @@ function ifatom() {
 }
 
 // pattern = symbolatom | ident;
-function pattern() {
+function pattern(): Node {
     if (istoken(TokenType.Symbol)) {
         return Node('SymbolPattern', {}, { pat: gettoken(TokenType.Symbol) })
     }
