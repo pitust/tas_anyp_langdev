@@ -18,9 +18,7 @@ class StringVMValue extends VMValue {
         throw new Error('Method not implemented.')
     }
     toBytes(): Buffer {
-        const b = new SmartBuffer()
-        b.writeStringNT(this.str)
-        return new SmartBuffer().writeStringNT(thi)
+        return new SmartBuffer().writeStringNT(this.str).toBuffer()
     }
     eq(other: VMValue): boolean {
         if (other instanceof StringVMValue) return other.str == this.str
@@ -111,7 +109,7 @@ function writeOp(o: Node, tgd: symbol = null) {
         return
     }
     if (o.name == 'StringAtom') {
-        out.push(new CreateStringOpcode())
+        out.push(new CreateStringOpcode(tgd, ))
     }
 
     abort('Unknown op ' + o.name)
