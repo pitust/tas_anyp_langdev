@@ -139,7 +139,9 @@ function ifatom() {
 
 // pattern = symbolatom | ident;
 function pattern() {
-    if (istoken)
+    if (istoken(TokenType.Symbol)) {
+        return Node('Sy')
+    }
 }
 // match_body = [","](",") pattern "=>" expr;
 
