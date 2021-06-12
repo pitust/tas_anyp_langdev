@@ -1,7 +1,9 @@
 import { abort, ast, Node } from "./index";
 
 abstract class VMValue {
-    
+    abstract string(): string
+    abstract clone(): VMValue
+    abstract toBytes(): VMValue
 }
 
 interface Context {
