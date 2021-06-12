@@ -129,11 +129,12 @@ function ifatom() {
     gettoken(TokenType.Keyword, 'if')
     const test = expr()
     const conseq = blockatom()
-    let alt = Node('Noop')
+    let alt = Node('Noop', {}, {})
     if (istoken(TokenType.Keyword, 'else')) {
         gettoken(TokenType.Keyword, 'else')
-
+        alt = blockatom()
     }
+    return Node('If', { test, conseq, alt})
 }
 
 // pattern = symbolatom | ident;
