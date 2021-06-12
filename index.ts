@@ -1,5 +1,7 @@
 import { readFileSync } from 'fs'
-
+function abort(s: string) {
+    console.l
+}
 const s = readFileSync('x.lang').toString()
 
 enum TokenType {
@@ -100,7 +102,7 @@ function Node(name: string, children: Record<string, Node>, params: Record<strin
 }
 
 function gettoken(tok: TokenType, s: string | null = null): string {
-    if (ts[0][0] == tok)
+    if (ts[0][0] != tok) abort('parse error')
 }
 
 
