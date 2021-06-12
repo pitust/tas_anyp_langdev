@@ -232,5 +232,9 @@ function stmt() {
     if (istoken(TokenType.Keyword, 'let')) {
         return letstmt()
     }
+    return expr()
 }
 // program = [^eof](stmt program);
+function program() {
+    if (s.l)
+}
