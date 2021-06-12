@@ -12,10 +12,10 @@ class StringVMValue extends VMValue {
         super()
     }
     string(): string {
-        throw new Error('Method not implemented.')
+        return JSON.stringify(this.str)
     }
     clone(): VMValue {
-        throw new Error('Method not implemented.')
+        return new StringVMValue(this.str)
     }
     toBytes(): Buffer {
         return new SmartBuffer().writeStringNT(this.str).toBuffer()
