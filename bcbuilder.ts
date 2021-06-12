@@ -18,9 +18,9 @@ abstract class Opcode {
 }
 
 class StoreOpcode extends Opcode {
-    constructor(public reg: symbol, public to: string) { super() }
+    constructor(public reg: symbol, to: string) { super() }
     interpret(ctx: Context): void {
-        throw new Error("Method not implemented.");
+        ctx.locals.set(thir.to)
     }
     string(): string {
         throw new Error("Method not implemented.");
