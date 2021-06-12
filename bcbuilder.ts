@@ -24,10 +24,9 @@ function id(s: symbol): string {
 }
 
 class AxeTempOpcode extends Opcode {
-    constructor(public reg: symbol, to: string) {
+    constructor(public reg: symbol) {
         super()
-        this.to = Symbol.for(to)
-        this.str = `str ${to}, ${id(reg)}`
+        this.str = `axe ${id(reg)}`
     }
 }
 
