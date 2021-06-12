@@ -113,7 +113,6 @@ function istoken(tok: TokenType, s: string | null = null): boolean {
     return true
 }
 
-
 // blockatom = "{" ([^"}"]stmt)* "}";
 function blockatom() {
     gettoken(TokenType.Punct, '{')
@@ -148,7 +147,8 @@ function pattern() {
 function match_body() {
     let clauses = Node('MatchTrailer', {}, {})
     while (1) {
-        while (istoken(TokenType.Punct, ','))
+        while (istoken(TokenType.Punct, ',')) gettoken(TokenType.Punct, ',')
+        
     }
 }
 
