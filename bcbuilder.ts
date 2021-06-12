@@ -30,7 +30,9 @@ function writeOp(o: Node, tgd: symbol = null) {
         return
     }
     if (o.name == 'Let') {
-        let s = Symbol('init(' + o.params.name)
+        let s = Symbol('init$' + o.params.name)
+        writeOp(o.children.init, s)
+        out.push(new StoreO)
     }
 
     abort('Unknown op ' + o.name)
