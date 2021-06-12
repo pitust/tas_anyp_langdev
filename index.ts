@@ -16,7 +16,7 @@ function lex(s: string): [TokenType, string][] {
 
     while (s.length) {
         if (mr = s.match(/^[0-9]+/)) {
-            o.push
+            o.push(mr[0])
         }
     }
 
