@@ -15,9 +15,10 @@ stratom = __;
 blockatom = "{" ([^"}"]stmt)* "}";
 ifatom = kw:"if" expr blockatom ["else"]("else" blockatom);
 matchatom
+symbolatom
+identatom
 
-
-atom = stratom | symbolatom  | | ifatom | blockatom | matchatom;
+atom = stratom | symbolatom | identatom | ifatom | blockatom | matchatom;
 
 (* prec climber *)
 expr = prec_climb[* / - +] atom;
