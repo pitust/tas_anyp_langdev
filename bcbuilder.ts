@@ -50,7 +50,8 @@ function writeOp(o: Node, tgd: symbol = null) {
     if (o.name == 'Let') {
         let s = Symbol('init$' + o.params.name)
         writeOp(o.children.init, s)
-        out.push(new StoreOpcode(s, o))
+        out.push(new StoreOpcode(s, o.params.name))
+        out.push(new AxeTempOpcode(s))
     }
 
     abort('Unknown op ' + o.name)
