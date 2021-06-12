@@ -157,6 +157,13 @@ function writeOp(o: Node, tgd: symbol = null) {
         out.push(new CreateSymbolOpcode(tgd, o.params.sym))
         return
     }
+    if (o.name == 'Atom') {
+        out.push(new CreateSymbolOpcode(tgd, o.params.sym))
+        return
+    }
+    if (o.name == 'Noop') {
+        return
+    }
 
     abort('Unknown op ' + o.name)
 }
