@@ -20,7 +20,7 @@ abstract class Opcode {
 const idpool = new Map< symbol, number>()
 const idsrc = ((i) => () => i++)(0)
 function id(s: symbol): string {
-    retur
+    return idpool.set(s, )
 }
 
 class StoreOpcode extends Opcode {
