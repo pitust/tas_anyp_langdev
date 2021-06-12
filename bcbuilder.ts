@@ -24,6 +24,13 @@ function id(s: symbol): string {
 }
 
 class AxeTempOpcode extends Opcode {
+    interpret(ctx: Context): void {
+        ctx.locals.delete(this.reg)
+    }
+    string(): string {
+        throw new Error('Method not implemented.')
+    }
+    str: string
     constructor(public reg: symbol) {
         super()
         this.str = `axe ${id(reg)}`
