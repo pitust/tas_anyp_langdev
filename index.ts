@@ -6,7 +6,7 @@ enum TokenType {
     Keyword,
     Ident,
     Symbol,
-    Number
+    Number,
 }
 
 function lex(s: string): [TokenType, string][] {
@@ -15,14 +15,10 @@ function lex(s: string): [TokenType, string][] {
     let mr: RegExpMatchArray
 
     const symbols = ''
-    const keywords = [
-        'if',
-        'match',
-        'let'
-    ]
+    const keywords = ['if', 'match', 'let']
 
     while (s.length) {
-        if (mr = s.match(/^[0-9]+/)) {
+        if ((mr = s.match(/^[0-9]+/))) {
             o.push([TokenType.Number, mr[0]])
             s = s.slice(mr[0].length)
             continue
@@ -32,9 +28,9 @@ function lex(s: string): [TokenType, string][] {
             s = s.slice(1)
             continue
         }
-        if (mr = s.match(/^[a-zA-Z_][a-zA-Z_0-9]*/)) {
-            if (mr[0].i)
-            o.push([TokenType.Ident, mr[0]])
+        if ((mr = s.match(/^[a-zA-Z_][a-zA-Z_0-9]*/))) {
+            if (keywords.includes(mr[0])) o.push([TokenType.Keyword, mr[0]])
+            else o.push([TokenType.Ident, mr[0]])
             s = s.slice(mr[0].length)
             continue
         }
