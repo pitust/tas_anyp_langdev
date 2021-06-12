@@ -31,7 +31,7 @@ class SymbolVMValue extends VMValue {
         super()
     }
     string(): string {
-        return this.ctx.
+        return this.ctx.symbolrevmap.get(this.symbol)
     }
     clone(): VMValue {
         
