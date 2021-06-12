@@ -1,4 +1,4 @@
-let world = 'world'
+let worldVar = 'world'
 let a = :ok;
 print("Hello, world" + world)
 inspect(match a {

@@ -8,6 +8,7 @@ enum TokenType {
     Punct,
     Number,
     String,
+    Symbol,
 }
 
 function lex(s: string): [TokenType, string][] {
