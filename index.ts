@@ -1,24 +1,24 @@
-sc = ";";
+// sc = ";";
 
-(* compiler magic *)
-stratom = __;
+// (* compiler magic *)
+// stratom = __;
 
-blockatom = "{" ([^"}"]stmt)* "}";
-ifatom = kw:"if" expr blockatom ["else"]("else" blockatom);
+// blockatom = "{" ([^"}"]stmt)* "}";
+// ifatom = kw:"if" expr blockatom ["else"]("else" blockatom);
 
-pattern = symbolatom | ident;
-match_body = [","](",") pattern "=>" expr;
+// pattern = symbolatom | ident;
+// match_body = [","](",") pattern "=>" expr;
 
-matchatom = kw:"match" "{" match_body "}";
-symbolatom = ":" ident;
-identatom = ident;
+// matchatom = kw:"match" "{" match_body "}";
+// symbolatom = ":" ident;
+// identatom = ident;
 
-atom = stratom | symbolatom | identatom | ifatom | blockatom | matchatom;
+// atom = stratom | symbolatom | identatom | ifatom | blockatom | matchatom;
 
-(* prec climber *)
-expr = prec_climb[* / - +] atom;
+// (* prec climber *)
+// expr = prec_climb[* / - +] atom;
 
-letstmt = kw:"let" ident:* "=" expr;
-exprstmt = expr;
-stmt = sc | letstmt | exprstmt;
-program = [^eof](stmt program);
+// letstmt = kw:"let" ident:* "=" expr;
+// exprstmt = expr;
+// stmt = sc | letstmt | exprstmt;
+// program = [^eof](stmt program);
