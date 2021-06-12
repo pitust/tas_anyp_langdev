@@ -198,13 +198,14 @@ expr = (() => {
     let result = () => {
         const a = atom()
         if (istoken(TokenType.Punct, '(')) {
-            gettoken(TokenType.Punct, '(')
+            !istoken(TokenType.Punct, ')')
             let args: Node[] = []
             while (!istoken(TokenType.Punct, ')')) {
                 args.push(expr())
-                if ()
+                if (!istoken(TokenType.Punct, ')')) gettoken(TokenType.Punct, ',')
             }
             gettoken(TokenType.Punct, ')')
+            
         }
         return a
     }
