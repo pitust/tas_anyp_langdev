@@ -29,12 +29,12 @@ class CreateStringOpcode extends Opcode {
         throw new Error('Method not implemented.')
     }
     string(): string {
-        throw new Error('Method not implemented.')
+        return this.strrepr
     }
     strrepr: string
-    constructor(public reg: symbol, public str: s) {
+    constructor(public reg: symbol, public str: string) {
         super()
-        this.strrepr = `axe ${id(reg)}`
+        this.strrepr = `lds ${id(reg)}, ${JSON.stringify(str)}`
     }
 
 }
