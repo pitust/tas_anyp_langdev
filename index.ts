@@ -214,6 +214,7 @@ expr = (() => {
                 if (!istoken(TokenType.Punct, ')')) gettoken(TokenType.Punct, ',')
             }
             gettoken(TokenType.Punct, ')')
+            return Node
         }
         return a
     }
