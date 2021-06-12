@@ -29,7 +29,7 @@ class StoreOpcode extends Opcode {
     constructor(public reg: symbol, to: string) {
         super()
         this.to = Symbol.for(to)
-        this.str = `${id(reg)}`
+        this.str = `str ${to}, ${id(reg)}`
     }
     interpret(ctx: Context): void {
         ctx.locals.set(this.to, ctx.regs.get(this.reg))
