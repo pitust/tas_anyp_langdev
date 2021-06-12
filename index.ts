@@ -180,6 +180,9 @@ function stringatom() {
 // atom = stratom | symbolatom | identatom | ifatom | blockatom | matchatom;
 function atom() {
     if (istoken(TokenType.String)) return stringatom()
+    if (istoken(TokenType.Symbol)) return symbolatom()
+    if (istoken(TokenType.Ident)) return identatom()
+    if (istoken(TokenType.Ident)) return identatom()
 }
 
 // (* prec climber *)
