@@ -147,7 +147,7 @@ function pattern() {
 // match_body = [","](",") pattern "=>" expr;
 function match_body() {
     let clauses = Node('MatchTrailer', {}, {})
-
+    
 }
 
 // matchatom = kw:"match" "{" match_body "}";
