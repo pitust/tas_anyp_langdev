@@ -156,7 +156,10 @@ function match_body() {
 }
 
 // matchatom = kw:"match" "{" match_body "}";
-function matcha
+function matchatom() {
+    gettoken(TokenType.Keyword, 'match')
+    
+}
 // symbolatom = ":" ident;
 // identatom = ident;
 
