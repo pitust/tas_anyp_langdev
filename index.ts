@@ -92,8 +92,10 @@ console.log(lex(s))
 interface Node {
     name: string
     children: Record<string, Node>
-    params: Record<string, >
+    params: Record<string, string>
 }
+
+function Node(): Node
 
 
 // sc = ";";
