@@ -190,6 +190,7 @@ function atom(): Node {
     if (istoken(TokenType.Punct, '{')) return blockatom()
     if (istoken(TokenType.Keyword, 'match')) return matchatom()
     if (istoken(TokenType.Keyword, 'if')) return ifatom()
+    if (istoken(TokenType.Number, 'if')) return ifatom()
     gettoken(TokenType.Lolnope, 'lol nope')
 }
 
