@@ -147,7 +147,7 @@ function pattern() {
     return Node('ValuePattern', {}, { pat: gettoken(TokenType.Ident) })
 }
 // match_body = [","](",") pattern "=>" expr match_body;
-function match_body() {
+function match_body(): Node {
     let clauses = Node('MatchTrailer', {}, {})
     while (1) {
         while (istoken(TokenType.Punct, ',')) gettoken(TokenType.Punct, ',')
@@ -160,7 +160,7 @@ function match_body() {
 }
 
 // matchatom = kw:"match" "{" match_body "}";
-function matchatom() {
+function matchatom(): Node {
     gettoken(TokenType.Keyword, 'match')
     gettoken(TokenType.Punct, '{')
     const result = match_body()
@@ -168,20 +168,20 @@ function matchatom() {
     return result
 }
 // symbolatom = ":" ident;
-function symbolatom() {
+function symbolatom(): Node {
     return Node('SymbolAtom', {}, { sym: gettoken(TokenType.Symbol) })
 }
 // identatom = ident;
-function identatom() {
+function identatom(): Node {
     return Node('IdentAtom', {}, { sym: gettoken(TokenType.Ident) })
 }
 // stringatom = __str;
-function stringatom() {
+function stringatom(): Node {
     return Node('StringAtom', {}, { sym: gettoken(TokenType.Ident) })
 }
 
 // atom = stratom | symbolatom | identatom | ifatom | blockatom | matchatom;
-function atom() {
+function atom(): Node {
     if (istoken(TokenType.String)) return stringatom()
     if (istoken(TokenType.Symbol)) return symbolatom()
     if (istoken(TokenType.Ident)) return identatom()
@@ -216,7 +216,7 @@ expr = (() => {
 })()
 
 // letstmt = kw:"let" ident:* "=" expr;
-function letstmt() {
+function letstmt(): Node {
     gettoken(TokenType.Keyword, 'let')
     const name = gettoken(TokenType.Ident)
     gettoken(TokenType.Punct, '=')
@@ -224,7 +224,7 @@ function letstmt() {
     return Node('Let', { init }, { name })
 }
 // stmt = ";" | letstmt | expr;
-function stmt() {
+function stmt(): Node {
     if (istoken(TokenType.Punct, ';')) {
         gettoken(TokenType.Punct, ';')
         return Node('Noop', {}, {})
