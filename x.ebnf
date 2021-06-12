@@ -1,0 +1,12 @@
+(*
+let world = 'world'
+let a = :ok;
+print("Hello, {world}")
+inspect(match a {
+    :ok => "ok",
+    :notok => "not ok"
+})
+*)
+letstmt = kw:"let" ;
+stmt = letstmt | exprstmt;
+program = [^eof](stmt program);
