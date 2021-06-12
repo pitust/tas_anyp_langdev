@@ -15,7 +15,7 @@ stratom = __;
 blockatom = "{" ([^"}"]stmt)* "}";
 ifatom = kw:"if" expr blockatom ["else"]("else" blockatom);
 
-match_body = [","](",") ;
+match_body = [","](",") pattern ;
 
 matchatom = kw:"match" "{" match_body "}";
 symbolatom = ":" ident;
