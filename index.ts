@@ -237,7 +237,7 @@ function stmt() {
 // program = [^eof](stmt program);
 function program() {
     if (s.length) {
-        return Node('RootStmt', {})
+        return Node('RootStmt', { stmt: stmt() })
     }
     return Node('Noop', {}, {})
 }
