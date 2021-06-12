@@ -2,7 +2,8 @@ import { abort, ast, Node } from './index'
 import { SmartBuffer } from 'smart-buffer'
 
 function getsymbol(ctx: Context, sym: string): symbol {
-    if (ctx.symbolmap.has(sym)) return this.sy
+    if (ctx.symbolmap.has(sym)) return ctx.symbolmap.get(sym)
+    return ctx.symbolmap.set(sym, SymbolVMValue)
 }
 
 abstract class VMValue {
