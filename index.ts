@@ -9,7 +9,13 @@ enum TokenType {
 }
 
 function lex(s: string): [TokenType, string][] {
-    let o: [TokenType, string][]
+    let o: [TokenType, string][] = []
+
+    while (s.length) {
+        
+    }
+
+    return o
 }
 
 // sc = ";";
