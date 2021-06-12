@@ -7,7 +7,7 @@ export function abort(s: string) {
 }
 const s = readFileSync('x.lang').toString()
 
-let expr: () => Node;
+let expr: () => Node
 
 enum TokenType {
     Keyword,
@@ -16,7 +16,7 @@ enum TokenType {
     Number,
     String,
     Symbol,
-    Lolnope
+    Lolnope,
 }
 
 function lex(s: string): [TokenType, string][] {
@@ -109,8 +109,10 @@ function Node(name: string, children: Record<string, Node>, params: Record<strin
 
 function gettoken(tok: TokenType, s: string | null = null): string {
     if (ts.length == 0) abort(`parse error: expected (${TokenType[tok]}, ${s}) got EOF`)
-    if (ts[0][0] != tok) abort(`parse error: expected (${TokenType[tok]}, ${s}) got (${TokenType[ts[0][0]]}, ${ts[0][1]})`)
-    if (ts[0][1] != s && s !== null) abort(`parse error: expected (${TokenType[tok]}, ${s}) got (${TokenType[ts[0][0]]}, ${ts[0][1]})`)
+    if (ts[0][0] != tok)
+        abort(`parse error: expected (${TokenType[tok]}, ${s}) got (${TokenType[ts[0][0]]}, ${ts[0][1]})`)
+    if (ts[0][1] != s && s !== null)
+        abort(`parse error: expected (${TokenType[tok]}, ${s}) got (${TokenType[ts[0][0]]}, ${ts[0][1]})`)
     return ts.shift()[1]
 }
 function istoken(tok: TokenType, s: string | null = null): boolean {
@@ -214,7 +216,11 @@ expr = (() => {
                 if (!istoken(TokenType.Punct, ')')) gettoken(TokenType.Punct, ',')
             }
             gettoken(TokenType.Punct, ')')
-            return Node('CallExpr', { args: Node('Args', Object.fromEntries(args.map((e, i) => [i, e])), {}), calle }, {  })
+            return Node(
+                'CallExpr',
+                { args: Node('Args', Object.fromEntries(args.map((e, i) => [i, e])), {}), callee: a },
+                {}
+            )
         }
         return a
     }
