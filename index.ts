@@ -5,6 +5,8 @@ function abort(s: string) {
 }
 const s = readFileSync('x.lang').toString()
 
+let expr: () => Node;
+
 enum TokenType {
     Keyword,
     Ident,
@@ -191,7 +193,7 @@ function atom() {
 
 // (* prec climber *)
 // expr = prec_climb[* / - +] atom;
-
+expr 
 
 // letstmt = kw:"let" ident:* "=" expr;
 // exprstmt = expr;
