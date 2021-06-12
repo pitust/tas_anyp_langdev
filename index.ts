@@ -140,8 +140,9 @@ function ifatom() {
 // pattern = symbolatom | ident;
 function pattern() {
     if (istoken(TokenType.Symbol)) {
-        return Node('Sy')
+        return Node('SymbolPattern', {}, { pat: gettoken(TokenType.Symbol) })
     }
+    return Node('SymbolPattern', {}, { pat: gettoken(TokenType.Symbol) })
 }
 // match_body = [","](",") pattern "=>" expr;
 
