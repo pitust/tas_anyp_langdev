@@ -227,7 +227,10 @@ function letstmt() {
 function stmt() {
     if (istoken(TokenType.Punct, ';')) {
         gettoken(TokenType.Punct, ';')
-        return Node('')
+        return Node('Noop', {}, {})
+    }
+    if (gettoken(TokenType.Keyword, 'let')) {
+        
     }
 }
 // program = [^eof](stmt program);
