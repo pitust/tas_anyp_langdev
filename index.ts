@@ -119,7 +119,7 @@ function blockatom() {
     gettoken(TokenType.Punct, '{')
     let stmt = Node('BlockTrailer', {}, {})
     while (!istoken(TokenType.Punct, '}')) {
-        stmt = Node('BlockElem', { next: stmt})
+        stmt = Node('BlockElem', { prev: stmt, handler: stmt() }, {})
     }
 }
 // ifatom = kw:"if" expr blockatom ["else"]("else" blockatom);
