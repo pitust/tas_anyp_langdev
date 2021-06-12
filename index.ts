@@ -147,7 +147,9 @@ function pattern() {
 // match_body = [","](",") pattern "=>" expr match_body;
 function match_body() {
     let clauses = Node('MatchTrailer', {}, {})
-    
+    while (1) {
+        while (istoken(TokenType.Punct, ','))
+    }
 }
 
 // matchatom = kw:"match" "{" match_body "}";
