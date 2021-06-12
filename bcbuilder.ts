@@ -30,7 +30,7 @@ function writeOp(o: Node, tgd: symbol = null) {
         return
     }
     if (o.name == 'Let') {
-        let s = Symbol('temp')
+        let s = Symbol('init(' + o.params.name)
     }
 
     abort('Unknown op ' + o.name)
