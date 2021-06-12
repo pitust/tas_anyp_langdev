@@ -16,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/pitust/tas_anyp_langdev/issues"
   },
-  "homepage": "https://github.com/pitust/tas_anyp_langdev#readme"
+  "homepage": "https://github.com/pitust/tas_anyp_langdev#readme",
+  "dependencies": {
+    "@types/node": "^15.12.2"
+  }
 }
