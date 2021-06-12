@@ -1,3 +1,4 @@
 world = 'world'
 print("Hello, {world}")
-a = 
+a = :ok
+match a
