@@ -197,7 +197,9 @@ function atom(): Node {
 expr = (() => {
     let result = () => {
         const a = atom()
-        if ()
+        if (istoken(TokenType.Punct, '(')) {
+            gettoken(TokenType.)
+        }
         return a
     }
     function precclimber(nodekind: string, sym: string) {
