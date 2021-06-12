@@ -144,7 +144,7 @@ function pattern() {
     }
     return Node('ValuePattern', {}, { pat: gettoken(TokenType.Ident) })
 }
-// match_body = [","](",") pattern "=>" expr;
+// match_body = [","](",") pattern "=>" expr match_body;
 function match_body() {
     let clauses = Node('MatchTrailer', {}, {})
     
