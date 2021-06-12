@@ -142,9 +142,12 @@ function pattern() {
     if (istoken(TokenType.Symbol)) {
         return Node('SymbolPattern', {}, { pat: gettoken(TokenType.Symbol) })
     }
-    return Node('SymbolPattern', {}, { pat: gettoken(TokenType.Symbol) })
+    return Node('ValuePattern', {}, { pat: gettoken(TokenType.Ident) })
 }
 // match_body = [","](",") pattern "=>" expr;
+function match_body() {
+    let 
+}
 
 // matchatom = kw:"match" "{" match_body "}";
 // symbolatom = ":" ident;
