@@ -31,6 +31,11 @@ class CreateStringOpcode extends Opcode {
     string(): string {
         throw new Error('Method not implemented.')
     }
+    strrepr: string
+    constructor(public reg: symbol, public str: s) {
+        super()
+        this.strrepr = `axe ${id(reg)}`
+    }
 
 }
 class AxeTempOpcode extends Opcode {
