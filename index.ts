@@ -1,3 +1,4 @@
+impor t{}
 // sc = ";";
 
 // (* compiler magic *)
