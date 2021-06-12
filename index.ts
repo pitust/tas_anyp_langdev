@@ -208,8 +208,10 @@ expr = (() => {
         }
         result = selfr
     }
-    precclimber('AddExpr', '+')
-    precclimber('AddExpr', '+')
+    precclimber('MulExpr', '*')
+    precclimber('DivExpr', '/')
+    precclimber('SubExpr', '-')
+    precclimber('SubExpr', '-')
     return result
 })()
 
