@@ -1,5 +1,5 @@
 import { ast } from "./index";
 
-abstract class Fuckyes {
-    
+abstract class Opcode {
+    interpre
 }
