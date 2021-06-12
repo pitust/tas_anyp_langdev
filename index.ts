@@ -101,8 +101,6 @@ function Node(name: string, children: Record<string, Node>, params: Record<strin
 
 
 
-// (* compiler magic *)
-// stratom = __;
 
 // blockatom = "{" ([^"}"]stmt)* "}";
 // ifatom = kw:"if" expr blockatom ["else"]("else" blockatom);
