@@ -7,6 +7,6 @@ inspect(match a {
     :notok => "not ok"
 })
 *)
-letstmt = kw:"let" ident:* ;
+letstmt = kw:"let" ident:* "=";
 stmt = letstmt | exprstmt;
 program = [^eof](stmt program);
