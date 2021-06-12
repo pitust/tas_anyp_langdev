@@ -158,6 +158,8 @@ function match_body() {
 // matchatom = kw:"match" "{" match_body "}";
 function matchatom() {
     gettoken(TokenType.Keyword, 'match')
+    gettoken(TokenType.Punct, '{')
+    const result = match_body()
     
 }
 // symbolatom = ":" ident;
