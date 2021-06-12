@@ -148,6 +148,7 @@ function match_body() {
     let clauses = Node('MatchTrailer', {}, {})
     while (1) {
         while (istoken(TokenType.Punct, ',')) gettoken(TokenType.Punct, ',')
+        let pat = pattern()
         
     }
 }
