@@ -16,7 +16,14 @@ function lex(s: string): [TokenType, string][] {
 
     while (s.length) {
         if (mr = s.match(/^[0-9]+/)) {
-            o.push(mr[0])
+            o.push([TokenType.Number, mr[0]])
+            s = s.slice(mr[0].length)
+            continue
+        }
+        if (mr = s.match(/^[0-9]+/)) {
+            o.push([TokenType.Number, mr[0]])
+            s = s.slice(mr[0].length)
+            continue
         }
     }
 
