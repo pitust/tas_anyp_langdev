@@ -18,7 +18,7 @@ abstract class Opcode {
 }
 
 class StoreOpcode extends Opcode {
-    constructor(public reg: symbol, public to: s)
+    constructor(public reg: symbol, public to: string) { super() }
     interpret(ctx: Context): void {
         throw new Error("Method not implemented.");
     }
