@@ -89,6 +89,11 @@ function lex(s: string): [TokenType, string][] {
 
 console.log(lex(s))
 
+interface Node {
+    
+}
+
+
 // sc = ";";
 
 // (* compiler magic *)
