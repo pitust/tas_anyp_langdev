@@ -160,14 +160,14 @@ function match_body(): Node {
     }
 }
 
-// matchatom = kw:"match" "{" match_body "}";
+// matchatom = kw:"match" expr "{" match_body "}";
 function matchatom(): Node {
     gettoken(TokenType.Keyword, 'match')
-    const matchover  =
+    const matchover = expr()
     gettoken(TokenType.Punct, '{')
     const result = match_body()
     gettoken(TokenType.Punct, '{')
-    return result
+    return Node('Match', { body: result, over: matchover })
 }
 // symbolatom = ":" ident;
 function symbolatom(): Node {
