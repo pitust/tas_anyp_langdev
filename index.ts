@@ -149,7 +149,9 @@ function match_body() {
     while (1) {
         while (istoken(TokenType.Punct, ',')) gettoken(TokenType.Punct, ',')
         let pat = pattern()
-        
+        gettoken(TokenType.Punct, '=>')
+        let expr = expr()
+        cla
     }
 }
 
