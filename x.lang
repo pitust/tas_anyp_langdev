@@ -1,7 +1,7 @@
 world = 'world'
 print("Hello, {world}")
 a = :ok
-match a {
+print(match a {
     :ok => 3
-    :n
+    :notok => 4
 }
