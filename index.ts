@@ -174,7 +174,9 @@ function identatom() {
 }
 
 // atom = stratom | symbolatom | identatom | ifatom | blockatom | matchatom;
-function 
+function atom() {
+    if (istoken(TokenType.String)) return string
+}
 
 // (* prec climber *)
 // expr = prec_climb[* / - +] atom;
