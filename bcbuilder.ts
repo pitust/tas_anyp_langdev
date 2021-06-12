@@ -178,7 +178,7 @@ function writeOp(o: Node, tgd: symbol = null) {
         return
     }
     if (o.name == 'CallExpr') {
-        o.params.args
+        Object.values(o.children.args.children)
     }
     if (o.name == 'Noop') {
         return
