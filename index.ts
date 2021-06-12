@@ -128,7 +128,8 @@ function blockatom() {
 function ifatom() {
     gettoken(TokenType.Keyword, 'if')
     const test = expr()
-    const  = blockatom()
+    const conseq = blockatom()
+    let alt = Node('Noop')
     if (istoken(TokenType.Keyword, 'else')) {
         gettoken(TokenType.Keyword, 'else')
 
