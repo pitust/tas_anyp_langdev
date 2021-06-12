@@ -208,7 +208,9 @@ expr = (() => {
         }
         result = selfr
     }
-    precc
+    precclimber('AddExpr', '+')
+    precclimber('AddExpr', '+')
+    return result
 })()
 
 // letstmt = kw:"let" ident:* "=" expr;
