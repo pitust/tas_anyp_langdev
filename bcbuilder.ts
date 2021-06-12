@@ -29,16 +29,16 @@ class SymbolVMValue extends VMValue {
     symbol: symbol
     constructor(public ctx: Context, name: string | symbol) {
         super()
-        if (typeof name == 'string') name = allocsymbol
+        if (typeof name == 'string') name = allocsymbol(ctx, name)
     }
     string(): string {
         return ':' + this.ctx.symbolrevmap.get(this.symbol)
     }
     clone(): VMValue {
-        return new SymbolVMValue(this.ctx, )
+        return new SymbolVMValue(this.ctx, this.symbol)
     }
     toBytes(): Buffer {
-        return new SmartBuffer().writeStringNT(this.name).toBuffer()
+        return new SmartBuffer().writeStringNT(this.ctx.symbolrevmap.get(this.symbol)).toBuffer()
     }
     eq(other: VMValue): boolean {
         if (other instanceof StringVMValue) return other.str == this.name
