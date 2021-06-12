@@ -25,7 +25,10 @@ function lex(s: string): [TokenType, string][] {
             continue
         }
         for (let sym of symbols) {
-            if (s.startsWith(sym))
+            if (s.startsWith(sym)) {
+                s = s.slice(sym.length)
+                o.co
+            }
         }
         if ((mr = s.match(/^[a-zA-Z_][a-zA-Z_0-9]*/))) {
             if (keywords.includes(mr[0])) {
