@@ -151,7 +151,7 @@ function match_body() {
         let pat = pattern()
         gettoken(TokenType.Punct, '=>')
         let expr = expr()
-        clauses = Node('MatchClause', { prev: clauses, })
+        clauses = Node('MatchClause', { prev: clauses, pattern: pat, expr }, {})
     }
 }
 
