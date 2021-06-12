@@ -13,7 +13,7 @@ sc = ";";
 stratom = __;
 
 blockatom = "{" ([^"}"]stmt)* "}";
-ifatom = kw:"if" expr "{" ([^"}"]stmt)* "}" ["else"]("{" ([^"}"]stmt)* "}");
+ifatom = kw:"if" expr blockatom ["else"](blockatom);
 
 atom = stratom | ifatom | blockatom | matchatom;
 
