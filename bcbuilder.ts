@@ -1,3 +1,5 @@
 import { ast } from "./index";
 
-enu
+enum Bytecode {
+
+}
