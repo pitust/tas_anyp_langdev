@@ -7,7 +7,7 @@ inspect(match a {
     :notok => "not ok"
 })
 *)
-sc 
+sc = ";";
 letstmt = kw:"let" ident:* "=" expr [";"]";";
 exprstmt = expr [";"]";";
 stmt = sc | letstmt | exprstmt;
