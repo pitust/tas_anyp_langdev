@@ -15,7 +15,7 @@ function lex(s: string): [TokenType, string][] {
 
     let mr: RegExpMatchArray
 
-    const symbols = ['=>'].concat('=:;,()+{}'.split('')
+    const symbols = ['=>'].concat('=:;,()+{}'.split(''))
     const keywords = ['if', 'match', 'let']
 
     while (s.length) {
