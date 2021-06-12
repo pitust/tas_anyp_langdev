@@ -1,6 +1,10 @@
 import { readFileSync } from 'fs'
 
-readFileSync('x.lang').toJSO
+const s = readFileSync('x.lang').toString()
+
+enum TokenType {
+    Kety
+}
 
 
 // sc = ";";
