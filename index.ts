@@ -27,7 +27,7 @@ function lex(s: string): [TokenType, string][] {
         for (let sym of symbols) {
             if (s.startsWith(sym)) {
                 s = s.slice(sym.length)
-                o.co
+                o.push([TokenType.Symbol, ])
             }
         }
         if ((mr = s.match(/^[a-zA-Z_][a-zA-Z_0-9]*/))) {
