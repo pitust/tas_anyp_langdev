@@ -49,11 +49,13 @@ function lex(s: string): [TokenType, string][] {
             while (1) {
                 try {
                     o.push([TokenType.String, eval(g)])
+                    break
                 } catch {
                     g += s[0]
                     s = s.slice(1)
                 }
             }
+            continue
         }
         console.log('[+] Error lexing, context: ' + s.split('\n', 1)[0].slice(0, 10))
         console.log('                           ^')
