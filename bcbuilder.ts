@@ -177,7 +177,9 @@ function writeOp(o: Node, tgd: symbol = null) {
         out.push(new LoadOpcode(tgd, o.params.sym))
         return
     }
-    if (o.name == 'CallExpr')
+    if (o.name == 'CallExpr') {
+        o.params.args
+    }
     if (o.name == 'Noop') {
         return
     }
