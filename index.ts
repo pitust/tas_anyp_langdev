@@ -115,7 +115,9 @@ function istoken(tok: TokenType, s: string | null = null): boolean {
 
 
 // blockatom = "{" ([^"}"]stmt)* "}";
-fu
+function blockatom() {
+    gettoken(TokenType.Punct, '{')
+}
 // ifatom = kw:"if" expr blockatom ["else"]("else" blockatom);
 
 // pattern = symbolatom | ident;
