@@ -199,7 +199,9 @@ expr = (() => {
         const ogr = result
         const selfr = () => {
             const r = ogr()
-            if (istoken(TokenType.Symbol))
+            if (istoken(TokenType.Symbol, sym)) {
+                return Node(nodekind, )
+            }
         }
         result = selfr
     }
