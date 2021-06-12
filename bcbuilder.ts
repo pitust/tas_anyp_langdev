@@ -49,6 +49,7 @@ interface Context {
     regs: Map<symbol, VMValue>
     locals: Map<symbol, VMValue>
     symbolmap: Map<string, symbol>
+    symbolrevmap: Map<string, symbol>
 }
 
 abstract class Opcode {
