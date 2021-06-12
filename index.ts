@@ -14,7 +14,7 @@ function lex(s: string): [TokenType, string][] {
 
     let mr: RegExpMatchArray
 
-    const symbols = ''
+    const symbols = '='
     const keywords = ['if', 'match', 'let']
 
     while (s.length) {
@@ -38,7 +38,8 @@ function lex(s: string): [TokenType, string][] {
             continue
         }
         if (s[0].match(/^\s/)) {
-            s =s.
+            s = s.slice(1)
+            continue
         }
         console.log('[+] Error lexing, context: ' + s.split('\n', 1)[0].slice(0, 10))
         console.log('                            ^')
