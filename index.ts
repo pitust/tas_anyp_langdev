@@ -150,12 +150,13 @@ function match_body() {
         while (istoken(TokenType.Punct, ',')) gettoken(TokenType.Punct, ',')
         let pat = pattern()
         gettoken(TokenType.Punct, '=>')
-        let expr = expr()
-        clauses = Node('MatchClause', { prev: clauses, pattern: pat, expr }, {})
+        let resultingexpr = expr()
+        clauses = Node('MatchClause', { prev: clauses, pattern: pat, expr: resultingexpr }, {})
     }
 }
 
 // matchatom = kw:"match" "{" match_body "}";
+function matcha
 // symbolatom = ":" ident;
 // identatom = ident;
 
