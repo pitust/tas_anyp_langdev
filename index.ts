@@ -200,7 +200,8 @@ expr = (() => {
         const selfr = () => {
             const r = ogr()
             if (istoken(TokenType.Symbol, sym)) {
-                return Node(nodekind, )
+                const nr = selfr()
+                return Node(nodekind, { ogexpr: r, add })
             }
         }
         result = selfr
