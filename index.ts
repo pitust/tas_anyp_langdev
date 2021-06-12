@@ -211,11 +211,14 @@ expr = (() => {
     precclimber('MulExpr', '*')
     precclimber('DivExpr', '/')
     precclimber('SubExpr', '-')
-    precclimber('SubExpr', '-')
+    precclimber('AddExpr', '+')
     return result
 })()
 
 // letstmt = kw:"let" ident:* "=" expr;
+function letstmt() {
+    
+}
 // exprstmt = expr;
 // stmt = ";" | letstmt | exprstmt;
 // program = [^eof](stmt program);
