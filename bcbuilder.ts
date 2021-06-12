@@ -26,7 +26,7 @@ function id(s: symbol): string {
 
 class CreateStringOpcode extends Opcode {
     interpret(ctx: Context): void {
-        throw new Error('Method not implemented.')
+        ctx.regs.set(this.reg, new StringVMValue(thi))
     }
     string(): string {
         return this.strrepr
