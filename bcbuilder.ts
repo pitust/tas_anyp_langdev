@@ -26,7 +26,7 @@ class StringVMValue extends VMValue {
     }
 }
 class SymbolVMValue extends VMValue {
-    symvmmap: 
+    symbol: symbol
     constructor(public ctx: Context, name: string) {
         super()
     }
