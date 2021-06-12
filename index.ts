@@ -42,7 +42,9 @@ function lex(s: string): [TokenType, string][] {
             continue
         }
         if (s[0] == "'") {
-            // haha we go 
+            // haha we got no time for a real string parser. this will do:
+            let g = "'"
+            while (ca)
         }
         console.log('[+] Error lexing, context: ' + s.split('\n', 1)[0].slice(0, 10))
         console.log('                           ^')
