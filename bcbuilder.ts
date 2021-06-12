@@ -26,7 +26,7 @@ class StringVMValue extends VMValue {
     }
 }
 class SymbolVMValue extends VMValue {
-    constructor(public str: string) {
+    constructor(public ctx: Context, public str: string) {
         super()
     }
     string(): string {
