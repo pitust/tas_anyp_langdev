@@ -104,7 +104,8 @@ function Node(name: string, children: Record<string, Node>, params: Record<strin
 
 function gettoken(tok: TokenType, s: string | null = null): string {
     if (ts[0][0] != tok) abort('parse error')
-    if (ts[0][1] != s &&) abort('parse error')
+    if (ts[0][1] != s && s !== null) abort('parse error')
+    return ts.shift[1]
 }
 
 
