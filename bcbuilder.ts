@@ -6,6 +6,21 @@ abstract class VMValue {
     abstract toBytes(): Buffer
     abstract eq(other: VMValue): boolean
 }
+class StringVMValue extends VMValue {
+    string(): string {
+        throw new Error('Method not implemented.')
+    }
+    clone(): VMValue {
+        throw new Error('Method not implemented.')
+    }
+    toBytes(): Buffer {
+        throw new Error('Method not implemented.')
+    }
+    eq(other: VMValue): boolean {
+        throw new Error('Method not implemented.')
+    }
+
+}
 
 interface Context {
     regs: Map<symbol, VMValue>
@@ -26,7 +41,7 @@ function id(s: symbol): string {
 
 class CreateStringOpcode extends Opcode {
     interpret(ctx: Context): void {
-        ctx.regs.set(this.reg, new StringVMValue(thi))
+        ctx.regs.set(this.reg, new StringVMValue(this.str))
     }
     string(): string {
         return this.strrepr
