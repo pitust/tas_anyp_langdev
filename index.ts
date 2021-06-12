@@ -99,7 +99,7 @@ function Node(name: string, children: Record<string, Node>, params: Record<strin
     return { name, children, params }
 }
 
-
+function asserttok(tok: T)
 
 
 // blockatom = "{" ([^"}"]stmt)* "}";
