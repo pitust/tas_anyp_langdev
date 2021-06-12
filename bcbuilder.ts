@@ -1,4 +1,4 @@
-import { ast, Node } from "./index";
+import { abort, ast, Node } from "./index";
 
 interface Context {}
 
@@ -16,5 +16,5 @@ const out: Opcode[] = []
 function writeOp(o: Node) {
 
 
-    abort
+    abort('Unknown op ' + o.)
 }
