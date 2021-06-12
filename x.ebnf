@@ -9,7 +9,7 @@ inspect(match a {
 *)
 sc = ";";
 
-atom = strato;
+atom = stratom | ifatom;
 
 (* prec climber *)
 expr = prec_climb[* / - +] atom;
