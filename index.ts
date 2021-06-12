@@ -17,6 +17,8 @@ function lex(s: string): [TokenType, string][] {
     const symbols = ''
     const keywords = [
         'if',
+        'match',
+        'let'
     ]
 
     while (s.length) {
@@ -25,7 +27,7 @@ function lex(s: string): [TokenType, string][] {
             s = s.slice(mr[0].length)
             continue
         }
-        if (mr = s.match(/^[0-9]+/)) {
+        if (s.startsWith) {
             o.push([TokenType.Number, mr[0]])
             s = s.slice(mr[0].length)
             continue
