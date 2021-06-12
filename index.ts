@@ -29,11 +29,15 @@ function lex(s: string): [TokenType, string][] {
             continue
         }
         if ((mr = s.match(/^[a-zA-Z_][a-zA-Z_0-9]*/))) {
-            if (keywords.includes(mr[0])) o.push([TokenType.Keyword, mr[0]])
-            else o.push([TokenType.Ident, mr[0]])
+            if (keywords.includes(mr[0])) {
+                o.push([TokenType.Keyword, mr[0]])
+            } else {
+                o.push([TokenType.Ident, mr[0]])
+            }
             s = s.slice(mr[0].length)
             continue
         }
+        console.log('')
     }
 
     return o
