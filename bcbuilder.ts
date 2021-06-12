@@ -7,6 +7,8 @@ abstract class Opcode {
     abstract string(): string
 }
 
-class Meme extends Opcode {
-    
-}
+// class Meme extends Opcode {
+
+// }
+
+function 
