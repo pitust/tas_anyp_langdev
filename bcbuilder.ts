@@ -13,7 +13,7 @@ abstract class Opcode {
 
 const out: Opcode[] = []
 
-function writeOp(o: Node) {
+function writeOp(o: Node, tgd: symbol = null) {
     if (o.name == 'RootStmt') {
         writeOp(o.children.stmt)
         writeOp(o.children.next)
