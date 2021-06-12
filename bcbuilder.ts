@@ -26,20 +26,20 @@ class StringVMValue extends VMValue {
     }
 }
 class SymbolVMValue extends VMValue {
-    constructor(public ctx: Context, public str: string) {
+    constructor(public ctx: Context, public name: string) {
         super()
     }
     string(): string {
-        throw new Error('Method not implemented.')
+        return ':' + this.name
     }
     clone(): VMValue {
-        throw new Error('Method not implemented.')
+        
     }
     toBytes(): Buffer {
-        return new SmartBuffer().writeStringNT(this.str).toBuffer()
+        return new SmartBuffer().writeStringNT(this.name).toBuffer()
     }
     eq(other: VMValue): boolean {
-        if (other instanceof StringVMValue) return other.str == this.str
+        if (other instanceof StringVMValue) return other.str == this.name
         return false
     }
 }
