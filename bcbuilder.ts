@@ -1,3 +1,2 @@
-import { ast } from ".";
+import { ast } from "./index";
 
-ast
