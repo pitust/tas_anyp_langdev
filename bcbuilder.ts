@@ -41,7 +41,7 @@ class SymbolVMValue extends VMValue {
         return new SmartBuffer().writeStringNT(this.ctx.symbolrevmap.get(this.symbol)).toBuffer()
     }
     eq(other: VMValue): boolean {
-        if (other instanceof StringVMValue) return other.str == this.name
+        if (other instanceof SymbolVMValue) return other.symbol == this.symbol
         return false
     }
 }
