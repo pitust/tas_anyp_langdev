@@ -37,7 +37,7 @@ function lex(s: string): [TokenType, string][] {
             s = s.slice(mr[0].length)
             continue
         }
-        console.log('')
+        console.log('[+] Error lexing: ' + s.split())
     }
 
     return o
