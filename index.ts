@@ -97,7 +97,7 @@ function lex(s: string): [TokenType, string][] {
 
 const ts = lex(s)
 
-interface Node {
+export interface Node {
     name: string
     children: Record<string, Node>
     params: Record<string, string>

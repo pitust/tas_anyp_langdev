@@ -1,4 +1,4 @@
-import { ast } from "./index";
+import { ast, Node } from "./index";
 
 interface Context {}
 
