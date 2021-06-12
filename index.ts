@@ -127,7 +127,9 @@ function blockatom() {
 // ifatom = kw:"if" expr blockatom ["else"]("else" blockatom);
 function ifatom() {
     gettoken(TokenType.Keyword, 'if')
-    
+    const test = expr()
+    const body = blockatom()
+    if (istoken(TokenType.Keyword))
 }
 
 // pattern = symbolatom | ident;
