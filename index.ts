@@ -18,18 +18,17 @@ function lex(s: string): [TokenType, string][] {
     const punct = ['=>'].concat('=:;,()+{}'.split(''))
     const keywords = ['if', 'match', 'let']
 
-    while (s.length) {
+    lexloop: while (s.length) {
         if ((mr = s.match(/^[0-9]+[^a-zA-Z_]/))) {
             o.push([TokenType.Number, mr[0].slice(0, -1)])
             s = s.slice(mr[0].length - 1)
             continue
         }
-        let haswo
         for (let sym of punct) {
             if (s.startsWith(sym)) {
                 s = s.slice(sym.length)
                 o.push([TokenType.Punct, sym])
-                break
+                continue lexloop
             }
         }
         if ((mr = s.match(/^[a-zA-Z_][a-zA-Z_0-9]*/))) {
@@ -52,13 +51,12 @@ function lex(s: string): [TokenType, string][] {
             while (1) {
                 try {
                     o.push([TokenType.String, eval(g)])
-                    break
+                    continue lexloop
                 } catch {
                     g += s[0]
                     s = s.slice(1)
                 }
             }
-            continue
         }
         if (s[0] == '"') {
             // haha we got no time for a real string parser. this will do:
