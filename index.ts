@@ -166,7 +166,7 @@ function matchatom() {
 }
 // symbolatom = ":" ident;
 function symbolatom() {
-    retur
+    return Node('SymbolAtom', {}, { sym: gettoken(TokenType.S) })
 }
 // identatom = ident;
 
