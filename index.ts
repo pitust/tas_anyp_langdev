@@ -226,7 +226,8 @@ function letstmt() {
 // stmt = ";" | letstmt | expr;
 function stmt() {
     if (istoken(TokenType.Punct, ';')) {
-        
+        gettoken(TokenType.Punct, ';')
+        return Node('')
     }
 }
 // program = [^eof](stmt program);
