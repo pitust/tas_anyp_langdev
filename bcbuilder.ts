@@ -35,7 +35,7 @@ class StoreOpcode extends Opcode {
         ctx.locals.set(this.to, ctx.regs.get(this.reg))
     }
     string(): string {
-        return
+        return this.str
     }
 }
 
@@ -50,7 +50,7 @@ function writeOp(o: Node, tgd: symbol = null) {
     if (o.name == 'Let') {
         let s = Symbol('init$' + o.params.name)
         writeOp(o.children.init, s)
-        out.push(new StoreOpcode())
+        out.push(new StoreOpcode(s, o))
     }
 
     abort('Unknown op ' + o.name)
