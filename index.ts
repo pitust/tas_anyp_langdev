@@ -266,4 +266,4 @@ function program(): Node {
 
 inspect.defaultOptions.depth = Infinity
 
-console.log(program())
+export program())
