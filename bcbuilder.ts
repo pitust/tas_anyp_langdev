@@ -7,6 +7,7 @@ abstract class VMValue {
     abstract eq(other: VMValue): boolean
 }
 class StringVMValue extends VMValue {
+    constructor(public str: string) { super() }
     string(): string {
         throw new Error('Method not implemented.')
     }
@@ -17,7 +18,8 @@ class StringVMValue extends VMValue {
         throw new Error('Method not implemented.')
     }
     eq(other: VMValue): boolean {
-        if (other instanceof StringVMValue) return other.
+        if (other instanceof StringVMValue) return other.str == this.str
+        
     }
 
 }
