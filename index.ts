@@ -205,7 +205,6 @@ expr = (() => {
                 if (!istoken(TokenType.Punct, ')')) gettoken(TokenType.Punct, ',')
             }
             gettoken(TokenType.Punct, ')')
-            
         }
         return a
     }
