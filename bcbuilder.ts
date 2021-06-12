@@ -11,4 +11,6 @@ abstract class Opcode {
 
 // }
 
-function 
+function writeOp(o: Node) {
+
+}
