@@ -100,8 +100,6 @@ function Node(name: string, children: Record<string, Node>, params: Record<strin
 }
 
 
-// sc = ";";
-
 
 // (* compiler magic *)
 // stratom = __;
@@ -123,5 +121,5 @@ function Node(name: string, children: Record<string, Node>, params: Record<strin
 
 // letstmt = kw:"let" ident:* "=" expr;
 // exprstmt = expr;
-// stmt = sc | letstmt | exprstmt;
+// stmt = ";" | letstmt | exprstmt;
 // program = [^eof](stmt program);
