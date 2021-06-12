@@ -112,6 +112,7 @@ function gettoken(tok: TokenType, s: string | null = null): string {
     return ts.shift()[1]
 }
 function istoken(tok: TokenType, s: string | null = null): boolean {
+    if (ts.length == 0) return
     if (ts[0][0] != tok) return false
     if (ts[0][1] != s && s !== null) return false
     return true
@@ -167,7 +168,7 @@ function matchatom(): Node {
     gettoken(TokenType.Punct, '{')
     const result = match_body()
     gettoken(TokenType.Punct, '}')
-    return Node('Match', { body: result, over: matchover })
+    return Node('Match', { body: result, over: matchover }, {})
 }
 // symbolatom = ":" ident;
 function symbolatom(): Node {
