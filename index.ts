@@ -1,6 +1,8 @@
 import { readFileSync } from 'fs'
 
 
+
+
 // sc = ";";
 
 // (* compiler magic *)
