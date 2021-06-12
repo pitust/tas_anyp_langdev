@@ -148,6 +148,7 @@ function match_body() {
     let clauses = Node('MatchTrailer', {}, {})
     while (1) {
         while (istoken(TokenType.Punct, ',')) gettoken(TokenType.Punct, ',')
+        if (istoken(TokenType.Punct))
         let pat = pattern()
         gettoken(TokenType.Punct, '=>')
         let resultingexpr = expr()
@@ -160,7 +161,8 @@ function matchatom() {
     gettoken(TokenType.Keyword, 'match')
     gettoken(TokenType.Punct, '{')
     const result = match_body()
-    
+    gettoken(TokenType.Punct, '{')
+    return result
 }
 // symbolatom = ":" ident;
 // identatom = ident;
