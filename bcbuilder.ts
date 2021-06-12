@@ -19,7 +19,7 @@ class StringVMValue extends VMValue {
     }
     toBytes(): Buffer {
         const b = new SmartBuffer()
-        b.writeUInt32LE(thi)
+        b.writeStringNT()
     }
     eq(other: VMValue): boolean {
         if (other instanceof StringVMValue) return other.str == this.str
