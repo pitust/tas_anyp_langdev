@@ -9,8 +9,10 @@ inspect(match a {
 *)
 sc = ";";
 
+
+
 (* prec climber *)
-expr = prec_climb[* / - + ];
+expr = prec_climb[* / - +] atom;
 
 letstmt = kw:"let" ident:* "=" expr;
 exprstmt = expr;
