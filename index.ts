@@ -40,6 +40,11 @@ function lex(s: string): [TokenType, string][] {
             s = s.slice(mr[0].length)
             continue
         }
+        if ((mr = s.match(/^:[a-zA-Z_][a-zA-Z_0-9]*/))) {
+            o.push([TokenType.Symbol, mr[0]])
+            s = s.slice(mr[0].length)
+            continue
+        }
         if (s[0].match(/^\s/)) {
             s = s.slice(1)
             continue
