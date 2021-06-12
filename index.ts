@@ -186,11 +186,12 @@ function atom() {
     if (istoken(TokenType.Punct, '{')) return blockatom()
     if (istoken(TokenType.Keyword, 'match')) return matchatom()
     if (istoken(TokenType.Keyword, 'if')) return ifatom()
-    gettoken(TokenType.Lolnope, 'lol')
+    gettoken(TokenType.Lolnope, 'lol nope')
 }
 
 // (* prec climber *)
 // expr = prec_climb[* / - +] atom;
+
 
 // letstmt = kw:"let" ident:* "=" expr;
 // exprstmt = expr;
