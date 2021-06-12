@@ -10,5 +10,5 @@ inspect(match a {
 
 letstmt = kw:"let" ident:* "=" expr [";"]";";
 exprstmt = expr [";"]";";
-stmt = letstmt | exprstmt;
+stmt = sc | letstmt | exprstmt;
 program = [^eof](stmt program);
