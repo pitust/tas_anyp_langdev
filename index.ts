@@ -87,7 +87,7 @@ function lex(s: string): [TokenType, string][] {
     return o
 }
 
-console.log(lex(s))
+const ts = lex(s)
 
 interface Node {
     name: string
@@ -100,7 +100,7 @@ function Node(name: string, children: Record<string, Node>, params: Record<strin
 }
 
 function gettoken(tok: TokenType, s: string | null = null): string {
-    
+    if ()
 }
 
 
