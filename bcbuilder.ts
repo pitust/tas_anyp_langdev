@@ -23,6 +23,16 @@ function id(s: symbol): string {
     return 'r' + idpool.set(s, idpool.get(s) ?? idsrc()).get(s).toString()
 }
 
+
+class CreateStringOpcode extends Opcode {
+    interpret(ctx: Context): void {
+        throw new Error('Method not implemented.')
+    }
+    string(): string {
+        throw new Error('Method not implemented.')
+    }
+
+}
 class AxeTempOpcode extends Opcode {
     interpret(ctx: Context): void {
         ctx.locals.delete(this.reg)
