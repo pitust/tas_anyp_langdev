@@ -100,9 +100,9 @@ class CreateSymbolOpcode extends Opcode {
         return this.strrepr
     }
     strrepr: string
-    constructor(public reg: symbol, public str: string) {
+    constructor(public reg: symbol, public sym: string) {
         super()
-        this.strrepr = `lds ${id(reg)}, ${JSON.stringify(str)}`
+        this.strrepr = `ldsym ${id(reg)}, ${JSON.stringify(str)}`
     }
 }
 class AxeTempOpcode extends Opcode {
