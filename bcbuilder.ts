@@ -92,6 +92,19 @@ class CreateStringOpcode extends Opcode {
         this.strrepr = `lds ${id(reg)}, ${JSON.stringify(str)}`
     }
 }
+class CreateSymbolOpcode extends Opcode {
+    interpret(ctx: Context): void {
+        ctx.regs.set(this.reg, new SymbolVMValue(this.str))
+    }
+    string(): string {
+        return this.strrepr
+    }
+    strrepr: string
+    constructor(public reg: symbol, public str: string) {
+        super()
+        this.strrepr = `lds ${id(reg)}, ${JSON.stringify(str)}`
+    }
+}
 class AxeTempOpcode extends Opcode {
     interpret(ctx: Context): void {
         ctx.locals.delete(this.reg)
