@@ -14,6 +14,11 @@ function lex(s: string): [TokenType, string][] {
 
     let mr: RegExpMatchArray
 
+    const symbols = ''
+    const keywords = [
+        'if',
+    ]
+
     while (s.length) {
         if (mr = s.match(/^[0-9]+/)) {
             o.push([TokenType.Number, mr[0]])
