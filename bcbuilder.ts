@@ -9,6 +9,7 @@ abstract class VMValue {
 
 interface Context {
     regs: Map<symbol, VMValue>
+    locals: Map<symbol, VMValue>
 }
 
 abstract class Opcode {
