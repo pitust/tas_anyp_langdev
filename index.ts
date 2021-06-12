@@ -1,4 +1,5 @@
-impor t{}
+import { readFileSync } from 'fs'
+
 // sc = ";";
 
 // (* compiler magic *)
