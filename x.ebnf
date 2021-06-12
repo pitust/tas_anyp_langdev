@@ -8,6 +8,9 @@ inspect(match a {
 })
 *)
 sc = ";";
+
+expr = ;
+
 letstmt = kw:"let" ident:* "=" expr;
 exprstmt = expr;
 stmt = sc | letstmt | exprstmt;
