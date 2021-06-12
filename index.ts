@@ -3,9 +3,12 @@ import { readFileSync } from 'fs'
 const s = readFileSync('x.lang').toString()
 
 enum TokenType {
-    Kety
+    Keyword,
+    Ident,
+    Symbol
 }
 
+function l
 
 // sc = ";";
 
