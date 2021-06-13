@@ -190,7 +190,10 @@ function writeOp(o: Node, tgd: symbol = Symbol('_')) {
         return
     }
     if (o.name == 'AddExpr') {
-        out.push(new Add)
+        const lhs = Symbol('lhs')
+        const rhs = Symbol('rhs')
+        
+        out.push(new AddOpcode(tgd, ))
         return
     }
     if (o.name == 'CallExpr') {
