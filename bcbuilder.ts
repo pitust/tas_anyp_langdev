@@ -94,15 +94,14 @@ class CreateStringOpcode extends Opcode {
 }
 class AddOpcode extends Opcode {
     interpret(ctx: Context): void {
-        ctx.regs.set(this.reg, new StringVMValue(this.str))
+        return 
     }
     string(): string {
-        return this.strrepr
+        return `add ${id(this.reg)}, {${id(this.lhs)}, ${id(this.rhs)}}`
     }
     strrepr: string
-    constructor(public reg: symbol, public str: string) {
+    constructor(public reg: symbol, public lhs: symbol, public rhs: symbol) {
         super()
-        this.strrepr = `ldstr ${id(reg)}, ${JSON.stringify(str)}`
     }
 }
 class CreateSymbolOpcode extends Opcode {
