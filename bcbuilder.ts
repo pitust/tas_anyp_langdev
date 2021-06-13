@@ -148,10 +148,13 @@ class LoadOpcode extends Opcode {
         return this.str
     }
 }
+class CallOpcode extends Opcode {
+
+}
 
 const out: Opcode[] = []
 
-function writeOp(o: Node, tgd: symbol = null) {
+function writeOp(o: Node, tgd: symbol = Symbol('_')) {
     console.log(o)
     if (o.name == 'RootStmt') {
         writeOp(o.children.stmt)
@@ -179,7 +182,16 @@ function writeOp(o: Node, tgd: symbol = null) {
     }
     if (o.name == 'CallExpr') {
         const args = Object.values(o.children.args.children)
-        
+        const callee = Symbol('callee')
+        const argr: symbol[] = []
+        writeOp(o.children.callee, callee)
+        for (let arg of args) {
+            const reg = Symbol('argument')
+            writeOp(arg, reg)
+            argr.push(reg)
+        }
+        out.push(new CallOpcode())
+        out.push(new AxeTempOpcode(callee))
     }
     if (o.name == 'Noop') {
         return
