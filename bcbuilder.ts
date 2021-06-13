@@ -149,6 +149,15 @@ class LoadOpcode extends Opcode {
     }
 }
 class CallOpcode extends Opcode {
+    constructor(public tgd: symbol, public callee: symbol, public args: symbol[]) {
+        super()
+    }
+    interpret(ctx: Context): void {
+        throw new Error('Method not implemented.')
+    }
+    string(): string {
+        return `call ${id(this.tgd)}, ${id(this.callee)}, {${this.args.map()}`
+    }
 
 }
 
