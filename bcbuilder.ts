@@ -11,6 +11,9 @@ abstract class VMValue {
     abstract clone(): VMValue
     abstract toBytes(): Buffer
     abstract eq(other: VMValue): boolean
+    add(other: VMValue): VMValue {
+        throw new Error('not implement')
+    }
 }
 
 class StringVMValue extends VMValue {
@@ -94,12 +97,11 @@ class CreateStringOpcode extends Opcode {
 }
 class AddOpcode extends Opcode {
     interpret(ctx: Context): void {
-        return 
+        return ctx.regs.get(this.lhs).add(ctx.regs.get(this.rhs))
     }
     string(): string {
         return `add ${id(this.reg)}, {${id(this.lhs)}, ${id(this.rhs)}}`
     }
-    strrepr: string
     constructor(public reg: symbol, public lhs: symbol, public rhs: symbol) {
         super()
     }
