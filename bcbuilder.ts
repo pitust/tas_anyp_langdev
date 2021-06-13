@@ -12,7 +12,7 @@ abstract class VMValue {
     abstract toBytes(): Buffer
     abstract eq(other: VMValue): boolean
     add(other: VMValue): VMValue {
-        throw new Error('not implement')
+        throw new Error('not implemented')
     }
 }
 
@@ -224,6 +224,7 @@ function writeOp(o: Node, tgd: symbol = Symbol('_')) {
         out.push(new CallOpcode(tgd, callee, argr))
         for (let reg of argr) out.push(new AxeTempOpcode(reg))
         out.push(new AxeTempOpcode(callee))
+        return
     }
     if (o.name == 'Noop') {
         return
