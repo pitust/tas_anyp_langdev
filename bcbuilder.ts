@@ -156,7 +156,7 @@ class CallOpcode extends Opcode {
         throw new Error('Method not implemented.')
     }
     string(): string {
-        return `call ${id(this.tgd)}, ${id(this.callee)}, {${this.args.map()}`
+        return `call ${id(this.tgd)}, ${id(this.callee)}, {${this.args.map(e => id(e)).join(', ')}}`
     }
 
 }
@@ -187,6 +187,10 @@ function writeOp(o: Node, tgd: symbol = Symbol('_')) {
     }
     if (o.name == 'IdentAtom') {
         out.push(new LoadOpcode(tgd, o.params.sym))
+        return
+    }
+    if (o.name == 'AddExpr') {
+        out.push(new Add)
         return
     }
     if (o.name == 'CallExpr') {
