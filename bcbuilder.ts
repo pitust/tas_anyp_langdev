@@ -92,6 +92,19 @@ class CreateStringOpcode extends Opcode {
         this.strrepr = `ldstr ${id(reg)}, ${JSON.stringify(str)}`
     }
 }
+class AddOpcode extends Opcode {
+    interpret(ctx: Context): void {
+        ctx.regs.set(this.reg, new StringVMValue(this.str))
+    }
+    string(): string {
+        return this.strrepr
+    }
+    strrepr: string
+    constructor(public reg: symbol, public str: string) {
+        super()
+        this.strrepr = `ldstr ${id(reg)}, ${JSON.stringify(str)}`
+    }
+}
 class CreateSymbolOpcode extends Opcode {
     interpret(ctx: Context): void {
         ctx.regs.set(this.reg, new SymbolVMValue(ctx, this.sym))
@@ -192,8 +205,9 @@ function writeOp(o: Node, tgd: symbol = Symbol('_')) {
     if (o.name == 'AddExpr') {
         const lhs = Symbol('lhs')
         const rhs = Symbol('rhs')
-        
-        out.push(new AddOpcode(tgd, ))
+        out.push(new AddOpcode(tgd, lhs, rhs))
+        out.push(new AxeTempOpcode(lhs))
+        out.push(new AxeTempOpcode(rhs))
         return
     }
     if (o.name == 'CallExpr') {
