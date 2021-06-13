@@ -190,7 +190,8 @@ function writeOp(o: Node, tgd: symbol = Symbol('_')) {
             writeOp(arg, reg)
             argr.push(reg)
         }
-        out.push(new CallOpcode())
+        out.push(new CallOpcode(tgd, callee, argr))
+        for (let reg of argr) out.push(new AxeTempOpcode(reg))
         out.push(new AxeTempOpcode(callee))
     }
     if (o.name == 'Noop') {
